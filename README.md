@@ -1,37 +1,52 @@
 # movie-web
 
+一个前后端通常吃，具备增删查改功能的电影展示网站。
+
+**后端**通过 nodejs 驱动，采用 express 框架，jade 模板引擎，快速搭建 web 应用；数据库用的是 mongodb，以及与之配套的 mongooes 插件；
+**前端**选用 bower 安装依赖，采用 jQuery 和 bootstrap 样式库编写页面交互和样式；
+**本地**开发通过 gulp 以及 一些插件，完成 样式编译，脚本，图片压缩等。
+
+
+主要技术栈：
+
+- 前端：bower bootstrap jquery
+- 后端：nodejs express jade mongodb
+- 构建：gulp
+
+
 ## 目录结构
 
 ```
 .
-├── README.md
-├── app.js
-├── backstage
-│   ├── controllers
-│   ├── models
-│   └── schemas
-├── package.json
-├── public
+├── README.md                // 项目简介
+├── app.js                   // 主文件
+├── backstage                // 后端逻辑
+│   ├── controllers             // 
+│   ├── models                  //
+│   └── schemas                 //
+├── bower.json               // bower 依赖配置文件
+├── dist                     // 静态资源目录 (部署目录)
+│   ├── images
+│   ├── javascripts
+│   ├── libs                   // bower 依赖安装目录
+│   └── stylesheets
+├── gulpfile.js              // gulp 配置文件
+├── package.json             // 项目依赖配置文件
+├── routes                   // 路由
+├── src                      // 源码
 │   ├── images
 │   ├── javascripts
 │   └── stylesheets
-├── routes
-├── test
-└── views
-    ├── include
-    ├── layout
-    └── pages
+└── test                     // 测试目录
    
 ```
 
-## 主要用到的技术
-- nodejs
-- mongodb
-- jade
-- gulp
 
 ## 启动项目
-首先`npm install` 然后`bower install` 最后 `npm run start`
+
+1. 首先 安装项目依赖 `npm install` `bower install`
+2. 然后 构建静态资源 开发 `gulp watch` 生产 `gulp`
+3. 最后 启动 web 服务 `node app.js`
 
 ## issue
 
