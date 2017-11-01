@@ -1,0 +1,29 @@
+{
+  "name": "movie-web",
+  "version": "1.0.0",
+  "description": "采用 nodejs express mongodb jade 搭建的一个电影网站",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/love-peach/movie-web.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "express",
+    "mongodb",
+    "jade"
+  ],
+  "author": "zhangjinpei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/love-peach/movie-web/issues"
+  },
+  "homepage": "https://github.com/love-peach/movie-web#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
