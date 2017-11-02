@@ -4,7 +4,9 @@ html(lang="zh-cmn-Hans")
 		meta(chartset="utf-8")
 		title #{title}
 		include ../include/head
+		block afterHeadContnt
 	body
+		include ../include/header
 		block content
 		include ../include/footer
 		block afterContent

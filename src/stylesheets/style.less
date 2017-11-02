@@ -1,6 +1,12 @@
 body {
-	background-color: #fafafa;
+
+background-color: #06060b;
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+
+
 }
+
 
 .hello {
 	height: 100vh;
@@ -10,5 +16,215 @@ body {
 	.hello-img {
 		height: 150px;
 		margin-bottom: 10px;
+	}
+}
+
+@navbarHeight: 60px;
+
+// 导航条样式
+.nav-bar {
+	background-color: #090723;
+	border-radius: 0;
+	color: #60606d;
+	height: @navbarHeight;
+	.brand {
+		float: left;
+		height: @navbarHeight;
+		text-decoration: none;
+		font-size: 20px;
+		line-height: @navbarHeight;
+		margin-right: 50px;
+		.logo {
+			font-size: 22px;
+			color: #fff;
+		}
+	}
+	.nav-menus {
+		float: left;
+		.menu {
+			float: left;
+			font-size: 0;
+			margin: 0 1px;
+			.menu-link {
+				display: block;
+				padding: 0 15px;
+				height: @navbarHeight;
+				line-height: @navbarHeight;
+				font-size: 14px;
+				text-decoration: none;
+			}
+			.menu-link.active {
+				color: #fff;
+			}
+			.menu-link:hover {
+				color: #fff;
+			}
+		}
+	}
+	.search {
+		position: relative;
+		float: right;
+		margin-right: 26px;
+		.search-input {
+			margin: (@navbarHeight - 29)/2px 0;
+			width: 200px;
+		    height: 29px;
+		    line-height: 29px!important;
+		    font-size: 12px;
+		    color: #aaa;
+		    border-radius: 15px;
+		    padding: 0 35px 0 17px;
+		    border: 1px solid rgba(255,255,255,.5);
+		    background: 0 0;
+		    outline: none;
+			transition: all .3s ease;
+		}
+		.search-input:focus {
+			color: #dfdfdf;
+			border: 1px solid rgba(255,255,255,.8);
+		}
+		.icon-search {
+			position: absolute;
+		    right: 11px;
+		    top: 18px;
+		    line-height: 25px;
+		    font-size: 18px;
+		    cursor: pointer;
+		    color: rgba(255,255,255,.5);
+		}
+	}
+
+	.acount {
+		float: right;
+		.avatar {
+			height: 30px;
+			width: 30px;
+			margin: (@navbarHeight - 30)/2px 0;
+			border-radius: 100%;
+		}
+	}
+}
+
+/* 轮播图样式 */
+.banner-wrp{
+	position: relative;
+	margin-bottom: 15px;
+	.banner {
+		li {
+			// height: 450px;
+			a {
+				display: block;
+				padding: 13.5% 0;
+				min-height: 240px;
+				max-height: 450px;
+				background-position: center;
+				background-size: cover;
+			}
+		}
+	}
+	.unslider-arrow {
+		display: none;
+		text-indent: -9999px;
+		top: 50%;
+		height: 60px;
+		width: 40px;
+		margin-top: -25px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: rgba(255,255,255,.4);
+		background-size: 50%;
+	}
+	.unslider-arrow.prev {
+		background-image: url(/images/arrow-prev.png);
+	}
+	.unslider-arrow.next {
+		background-image: url(/images/arrow-next.png);
+	}
+	&:hover {
+		.unslider-arrow {
+			display: block;
+		}
+	}
+}
+
+.home {
+	.recommend {
+		margin-bottom: 20px;
+	}
+	.recommend-title {
+		color: #f4f4f4;
+		display: block;
+		margin: 30px 0 15px;
+		font-size: 16px;
+	}
+	.recommend-video-wrap {
+		overflow: hidden;
+		width: 100%;
+		.recommend-video {
+			float: left;
+			height: 195px;
+			padding: 1px;
+			width: 27%;
+		}
+		.recommend-video:first-child {
+			height: 390px;
+			width: 46%;
+		}
+		.video-cover-wrap {
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+		}
+		.video-cover {
+			height: 100%;
+			width: 100%;
+			background-size: cover;
+			background-position: top center;
+			transform: scale(1.1);
+			transition: transform .3s ease;
+		}
+		.recommend-video:hover {
+			.video-cover {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+
+/* 页脚样式 */
+.footer {
+	border-top: 1px solid #fff;
+	margin-top: 20px;
+	padding: 20px 0;
+	background-color: #06060b;
+	color: #60606d;
+	.footer-nav-bar {
+		.nav-item {
+			display: inline-block;
+			margin-bottom: 5px;
+			.nav-link{
+				padding: 0 8px;
+			}
+			.nav-link:hover{
+				color: #fff;
+			}
+		}
+		.nav-item + .nav-item{
+			line-height: 1;
+			border-left: 1px solid #60606d;
+		}
+	}
+	.friend-link {
+		margin: 0;
+		a {
+			padding: 0 8px;
+		}
+		a + a {
+			border-left: 1px solid #60606d;
+		}
+		a:hover {
+			color: #fff;
+		}
 	}
 }

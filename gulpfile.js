@@ -68,7 +68,7 @@
 
     //less转css,自动补齐前缀并压缩
     gulp.task('css', function () {
-        var cssSrc = paths.src.less + 'style.less';
+        var cssSrc = paths.src.less + '*.less';
         var cssDest = paths.dist.css;
 
         return gulp.src(cssSrc)

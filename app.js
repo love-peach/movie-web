@@ -17,8 +17,8 @@ app.use(express.static(path.join(__dirname, 'dist')))
 
 // 定义路由
 app.get('/', function(req, res) {
-	res.render('hello', {
-    	title: '欢迎'
+	res.render('home', {
+    	title: '主页'
   	})
 })
 
