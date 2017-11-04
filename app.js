@@ -16,9 +16,63 @@ console.log(path.join(__dirname, 'dist'))
 app.use(express.static(path.join(__dirname, 'dist')))
 
 // 定义路由
+
+// 首页
 app.get('/', function(req, res) {
 	res.render('home', {
-    	title: '主页'
+    	title: '主页',
+    	movie: [
+    		{
+    			cover: '/images/captain.jpeg'
+    		},
+    		{
+    			cover: '/images/captain.jpeg'
+    		},
+    		{
+    			cover: '/images/captain.jpeg'
+    		},
+    		{
+    			cover: '/images/captain.jpeg'
+    		},
+    		{
+    			cover: '/images/captain.jpeg'
+    		},
+    	]
+  	})
+})
+
+// 排行榜
+app.get('/ranking', function(req, res) {
+	res.render('ranking', {
+    	title: '排行榜'
+  	})
+})
+
+// 选电影
+app.get('/explore', function(req, res) {
+	res.render('explore', {
+    	title: '选电影'
+  	})
+})
+
+// 影评
+app.get('/review', function(req, res) {
+	res.render('review', {
+    	title: '影评'
+  	})
+})
+
+// 详情
+app.get('/detail/:id', function(req, res) {
+    res.render('detail', {
+        title: '详情'
+    })
+})
+
+// 后台
+app.get('/admin', function(req, res) {
+	res.render('admin/index', {
+    	title: '主页' 
   	})
 })
 

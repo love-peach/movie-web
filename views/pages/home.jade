@@ -1,6 +1,6 @@
 extends ../layout/index
 
-block afterHeadContnt
+block afterHeadContent
 	link(href="/stylesheets/unslider.min.css", rel="stylesheet")
 
 block content
@@ -20,43 +20,19 @@ block content
 						a(href="/",style="background-image: url(/images/bg-2.jpg)")
 		.container
 			.row
-				.recommend
-					a.recommend-title.text-center(href="/") 科幻电影
-					.recommend-video-wrap
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-			.row
-				.recommend
-					a.recommend-title.text-center(href="/") 科幻电影
-					.recommend-video-wrap
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
-						.recommend-video
-							.video-cover-wrap
-								.video-cover(style="background-image: url(/images/captain.jpeg)")
+				mixin moviePreview(movies)
+					.recommend
+							a.recommend-title.text-center(href="/") 科幻电影
+							.recommend-video-wrap
+								each item in movies
+									.recommend-video
+										.video-cover-wrap
+											.video-cover(style="background-image: url(#{item.cover})")
+				+moviePreview(movie)
+				+moviePreview(movie)
+				+moviePreview(movie)
+				
+		
 block afterContent
 	script(src="/javascripts/unslider.min.js")
 	script(src="/javascripts/home.js")

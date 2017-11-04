@@ -1,0 +1,69 @@
+.page-explore {
+	.category-group-wrap {
+		margin: 20px 0;
+		border-bottom: 1px dashed #ccc;
+	}
+	.category-group {
+		margin: 10px 0;
+
+		.category-nane {
+			float: left;
+			width: 50px;
+			padding: 10px 0;
+			line-height: 14px;
+		}
+		.category-nane:after{
+			content: ':';
+		}
+		.category-list {
+			padding-left: 50px;
+			.list-item {
+				float: left;
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+			.list-item.active {
+				.item-name{
+					color: #fff;
+					background: #4cb6cb;
+				}
+			}
+			.item-name {
+				color: red;
+				font-size: 14px;
+				display: inline-block;
+				padding: 10px 15px;
+				line-height: 14px;
+				border-radius: 3px;
+				text-decoration: none;
+			}
+		}
+	}
+	.movie-list-wrap {
+		.row {
+			margin-right: -10px;
+			margin-left: -10px;
+		}
+		.row > div {
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		.movie-box {
+			display: block;
+			margin-bottom: 20px;
+			.movie-cover {
+				height: 200px;
+				border-radius: 3px;
+				margin-bottom: 10px;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.movie-name {
+				color: #545a5f;
+			}
+		}
+	}
+}

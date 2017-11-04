@@ -1,0 +1,61 @@
+extends ../../layout/index
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/admin.min.css")
+
+block content
+	.page-admin
+		.container
+			.row
+				.col-md-6.movie-entry
+					form.form-horizontal
+						.form-group
+							label.col-sm-3.control-label(for="name") 名称
+							.col-sm-9
+								input.form-control(id="name", type="text", plaeholder="电影名称")
+						.form-group
+							label.col-sm-3.control-label(for="alias") 别名
+							.col-sm-9
+								input.form-control(id="alias", type="text", plaeholder="电影别名（可不填）")
+						.form-group
+							label.col-sm-3.control-label(for="director") 导演
+							.col-sm-9
+								input.form-control(id="director", type="text", plaeholder="请输入导演")
+						.form-group
+							label.col-sm-3.control-label(for="screenwriter") 编剧
+							.col-sm-9
+								input.form-control(id="screenwriter", type="text", plaeholder="请输入编剧")
+						.form-group
+							label.col-sm-3.control-label(for="actor") 演员
+							.col-sm-9
+								input.form-control(id="actor", type="text", plaeholder="请输入演员")
+						.form-group
+							label.col-sm-3.control-label(for="type") 类型
+							.col-sm-9
+								input.form-control(id="type", type="text", plaeholder="请选择电影类型")
+						.form-group
+							label.col-sm-3.control-label(for="country") 制片国家/地区
+							.col-sm-9
+								input.form-control(id="country", type="text", plaeholder="请输入国家或地区")
+						.form-group
+							label.col-sm-3.control-label(for="email") 语言
+							.col-sm-9
+								input.form-control(id="language", type="text", plaeholder="请输入语言")
+						.form-group
+							label.col-sm-3.control-label(for="releaseTime") 上映时间
+							.col-sm-9
+								input.form-control(id="releaseTime", type="text", plaeholder="请输入上映时间")
+						.form-group
+							label.col-sm-3.control-label(for="filmLength") 片长
+							.col-sm-9
+								input.form-control(id="filmLength", type="number", plaeholder="请输入片长")
+						.form-group
+							label.col-sm-3.control-label(for="sourceUrl") 片源地址
+							.col-sm-9
+								input.form-control(id="sourceUrl", type="text", plaeholder="请输入片源地址")
+						.form-group
+							label.col-sm-3.control-label(for="brief") 简介
+							.col-sm-9
+								input.form-control(id="brief", type="textarea", rows="3",plaeholder="请输入简介")
+				.col-md-6.movie-preview
+					p 实时预览

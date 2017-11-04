@@ -1,22 +1,18 @@
+- menus = [{title: '首页', href: '/'},{title: '排行榜', href: '/ranking'},{title: '选电影', href: '/explore'},{title: 'Admin', href: '/admin'}]
+
 .nav-bar
 	.container
 		.row
-			a.brand(href="/")
-				i.iconfont.icon-dianyin.logo
-			ul.nav-menus
-				li.menu
-					a.menu-link.active(href="/") 首页
-				li.menu
-					a.menu-link(href="/") 科幻电影
-				li.menu
-					a.menu-link(href="/") 科幻电影
-				li.menu
-					a.menu-link(href="/") 科幻电影
-				li.menu
-					a.menu-link(href="/") 科幻电影
-			.acount
-				img.avatar(src="/images/captain.jpeg")
-			.search
-				i.iconfont.icon-search
-				input.search-input(placeholder="请搜索名称，导演，演员")
+			.col-xs-12
+				a.brand(href="/")
+					i.iconfont.icon-dianyin.logo
+				ul.nav-menus
+					each menu in menus
+						li.menu
+							a.menu-link.active(href="#{menu.href}") #{menu.title}
+				.acount
+					img.avatar(src="/images/captain.jpeg")
+				.search.hidden-xs
+					i.iconfont.icon-search
+					input.search-input(placeholder="请搜索名称，导演，演员")
 			

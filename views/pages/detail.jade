@@ -1,0 +1,61 @@
+extends ../layout/index
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/detail.min.css")
+
+block content
+	.page-detail
+		.container
+			.row.video-infomation
+				.col-md-8
+					.panel-left
+						.video-player-wrap
+							.video-player-box
+								video.video-player(id="vedioPlayer",controls, autoplay, type="video/webm", preload="metadata", src="http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.webm") Your browser does not support the video tag.
+							.video-player-control
+								.iconfont.icon-
+
+						.video-brief
+							h2.brief-title 猩球崛起3：终极之战 War for the Planet of the Apes (2017)
+							p.brief-introduce 凯撒（安迪·瑟金斯 饰）领导的猿族将被迫与残暴的Colonel（伍迪·哈里森 饰）领导的人类军队上演一场生死大战。猿族在战斗中遭遇了前所未有的重创，由此激发了凯撒内心中黑暗的一面，心中燃起复仇的烈火。最终，凯撒与Colonel面对面进行了一场关乎猿族和人类命运的终极之战。 
+
+				.col-md-4(style="flex: 1")
+					.panel-right
+						.video-rate.hidden-sm.hidden-xs
+							h1 6.9分
+						dl
+							dt.visible-sm.visible-xs 评分
+								dd.visible-sm.visible-xs 6.9分
+							dt 导演
+								dd 马特·里夫斯
+							dt 编剧
+								dd 马特·里夫斯 / 马克·鲍姆贝克 / 里克·杰法 / 阿曼达·斯尔沃 / 皮埃尔·布尔
+							dt 类型
+								dd 剧情 / 动作 / 科幻
+							dt 地区
+								dd 美国
+							dt 语言
+								dd 英语 / 美国手语
+							dt 片长
+								dd 140分钟
+							dt 又名
+								dd 猩球崛起：终极决战
+							dt 上映日期
+								dd 2017-09-15(中国大陆) / 2017-07-14(美国)
+			.row
+				.col-xs-12
+					.comment-wrap
+						.comment-form
+							.input-textarea
+								textarea(type="textarea", rows="4", cols="20", placeholder="我来说两句")
+							.form-submit-wrap.text-right
+								button.btn.btn-primary 发表评论
+						ul.comment-list
+							each item in [1,2,3,4,5,6]
+								li.list-item
+									img.comment-avatar(src="/images/captain.jpeg")
+									.content-wrap
+										p.coment-name 莫忘初衷
+										p.comment-content 回看这个系列，真的从始至终都表达了自己要说的东西，作为暑期大片实为难得。这部终章直指美国是建立在奴隶制的基础上——猿族劳役时竟大放星条旗永不落，真是太讽刺。反派就像纳粹种族清洗者和现代启示录的白兰度的结合，纳粹思维的荒谬和疯狂令人瞠目。瑟金斯真
+
+						

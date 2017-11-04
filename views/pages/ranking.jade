@@ -1,0 +1,29 @@
+extends ../layout/index
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/ranking.min.css")
+
+block content
+	.page-ranking
+		.container
+			.category-group-wrap
+				.row
+					.col-xs-12
+						.category-group.clearfix
+							span.category-nane 类型
+							ul.category-list
+								each type in ["喜剧", "悲剧", "爱情", "动作", "枪战", "犯罪", "惊悚", "恐怖", "悬疑", "动画", "家庭", "奇幻"]
+									li.list-item.active
+										a.item-name(href="#") #{type}
+			.movie-list-wrap
+				.row
+					each movie in [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+						.col-sm-6
+							.movie-box.clearfix
+								a(href="/detail/123").movie-cover
+									img(src="/images/captain.jpeg")
+								.movie-brief
+									a(href="/detail/123").brie-item.brief-name 机器总动员
+									p.brie-item.brief-crew 阿弗莱德·阿贝尔 / 古斯塔夫·佛力施 / 布里吉特·赫尔姆 / 鲁道夫·克莱恩-鲁格 
+									p.brie-item.brief-misc 2008 /  美国 / 喜剧 / 爱情 / 科幻 / 动画 / 冒险
+									p.brie-item.brief-rate 9.3510340人评价 

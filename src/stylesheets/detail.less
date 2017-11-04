@@ -1,0 +1,137 @@
+.page-detail {
+	.video-infomation {
+		padding-top: 30px;
+		display: flex;
+    	flex-wrap: wrap;
+	}
+	.video-infomation > [class*='col-'] {
+	    display: flex;
+	}
+	.panel-left {
+		background-color: #fff;
+		margin-bottom: 30px;
+		.video-player-wrap {
+			.video-player-box {
+				width: 100%;
+				font-size: 0;
+				.video-player {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.video-player-control {
+				height: 60px;
+				background-color: #4cb6cb;
+	    		color: #eaf6f9;
+			}
+		}
+		.video-brief {
+			padding: 20px;
+			.brief-title {
+				color: #333;
+				font-size: 30px;
+			}
+			.brief-introduce {
+				color: #788188;
+				text-align: justify;
+			}
+		}
+	}
+	.panel-right {
+		width: 100%;
+		background-color: #fff;
+		margin-bottom: 30px;
+		// padding: 20px 10px 10px;
+		color: #788188;
+		.video-rate {
+			background: no-repeat url(/images/captain.jpeg) center center;
+			background-size: cover;
+			h1 {
+				height: 200px;
+				color: #fff;
+				text-align: center;
+				line-height: 200px;
+				background-color: rgba(0,0,0,.5);
+			}
+		}
+		dl {
+			margin-top: 20px;
+		}
+		dt {
+			font-weight: normal;
+			width: 80px;
+			padding: 5px 5px 5px 0;
+			float: left;
+			text-align: right;
+		}
+		dt:after {
+			content: ':';
+		}
+		dd {
+			padding: 5px 10px 5px 80px;
+		    vertical-align: top;
+
+		    // border-top: 1px solid #eee;
+		}
+		dd:last-child {
+			// border: 0;
+		}
+	}
+	.comment-wrap {
+		// background-color: #fff;
+		.comment-form {
+			// border: 1px solid #cbd5dd;
+			padding: 15px;
+			margin-bottom: 30px;
+			background-color: #fff;
+			.input-textarea {
+				font-size: 0;
+			}
+			textarea {
+			    width: 100%;
+			    padding: 10px;
+			    margin-bottom: 10px;
+			    outline: 0;
+			    resize: none;
+			    color: #999;
+				font-size: 14px;
+				border: 1px solid #cbd5dd;
+		        border-bottom: 1px solid #cbd5dd;
+			}
+			textarea:focus {
+				color: #333;
+				border: 1px solid #4cb6cb;
+			}
+			.form-submit-wrap {
+				background-color: #fff;
+			}
+		}
+		.comment-list {
+			background: #fff;
+			padding: 15px;
+			margin-bottom: 30px;
+			.list-item {
+				padding: 20px 0;
+				.comment-avatar {
+					float: left;
+					width: 50px;
+					height: 50px;
+					border-radius: 100%;
+				}
+				.content-wrap {
+					padding-left: 60px;
+				}
+				.coment-name {
+					color: #333;
+				}
+				.comment-content {
+					color: #788188;
+					margin: 0;
+				}
+			}
+			.list-item + .list-item {
+				border-top: 1px solid #e5e5e5;
+			}
+		}
+	}
+}

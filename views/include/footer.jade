@@ -1,23 +1,16 @@
+- menus = [{title: '首页', href: '/'},{title: '排行榜', href: '/ranking'},{title: '选电影', href: '/explore'}, {title: 'Admin', href: '/admin'}]
+
+- frendLinks = [{title: 'nodejs', href: '/'},{title: 'jade', href: '/'},{title: 'express', href: '/'},{title: 'mongodb', href: '/'},{title: 'gulp', href: '/'}, {title: 'bootstrap', href: '/'}]
+
 .footer
 	.container
 		.row
 			ul.text-center.footer-nav-bar
-				li.nav-item
-					a.nav-link(href="/") 首页
-				li.nav-item
-					a.nav-link(href="/") 科幻电影
-				li.nav-item
-					a.nav-link(href="/") 科幻电影
-				li.nav-item
-					a.nav-link(href="/") 科幻电影
-				li.nav-item
-					a.nav-link(href="/") 科幻电影
+				each menu in menus
+					li.nav-item
+						a.nav-link(href="#{menu.href}") #{menu.title}
 			p.text-center.friend-link 感谢这些技术支持：
-				a(href="/") nodejs
-				a(href="/") jade
-				a(href="/") express
-				a(href="/") mongodb
-				a(href="/") gulp
-				a(href="/") bootstrap
+				each frendlink in frendLinks
+					a(href="#{frendlink.href}") #{frendlink.title}
 script(src="/libs/jquery/dist/jquery.min.js")
 script(src="/libs/bootstrap/dist/js/bootstrap.min.js")
