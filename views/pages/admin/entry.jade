@@ -1,0 +1,65 @@
+extends ../../layout/index
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/admin.min.css")
+
+block content
+	.page-admin-entry
+		.container
+			.row
+				.col-md-6.movie-entry
+					form.form-horizontal
+						input#movieId(type="hidden", name="movie[_id]" value="#{movie._id}")
+						.form-group
+							label.col-sm-3.control-label(for="inputName") 名称
+							.col-sm-9
+								input#inputName.form-control(type="text", name="movie[name]", value="#{movie.name}", plaeholder="电影名称")
+						.form-group
+							label.col-sm-3.control-label(for="inputAlias") 别名
+							.col-sm-9
+								input#inputAlias.form-control(type="text", name="movie[alias]", value="#{movie.alias}", plaeholder="电影别名（可不填）")
+						.form-group
+							label.col-sm-3.control-label(for="inputDirector") 导演
+							.col-sm-9
+								input#inputDirector.form-control(type="text", name="movie[director]", value="#{movie.director}",  plaeholder="请输入导演")
+						.form-group
+							label.col-sm-3.control-label(for="inputScreenwriter") 编剧
+							.col-sm-9
+								input#inputScreenwriter.form-control(type="text", name="movie[screenwriter]",value="#{movie.screenwriter}", plaeholder="请输入编剧")
+						.form-group
+							label.col-sm-3.control-label(for="inputActor") 演员
+							.col-sm-9
+								input#inputActor.form-control(type="text", name="movie[actor]", value="#{movie.actor}", plaeholder="请输入演员")
+						.form-group
+							label.col-sm-3.control-label(for="inputType") 类型
+							.col-sm-9
+								input#inputType.form-control(type="text", name="movie[type]", value="#{movie.type}", plaeholder="请选择电影类型")
+						.form-group
+							label.col-sm-3.control-label(for="inputRegion") 制片国家/地区
+							.col-sm-9
+								input#inputRegion.form-control(type="text", name="movie[region]", value="#{movie.region}", plaeholder="请输入国家或地区")
+						.form-group
+							label.col-sm-3.control-label(for="inputLanguage") 语言
+							.col-sm-9
+								input#inputLanguage.form-control(type="text", name="movie[language]",value="#{movie.language}", plaeholder="请输入语言")
+						.form-group
+							label.col-sm-3.control-label(for="inputReleaseTime") 上映时间
+							.col-sm-9
+								input#inputReleaseTime.form-control(type="text", name="movie[releaseTime]", value="#{movie.releaseTime}", plaeholder="请输入上映时间")
+						.form-group
+							label.col-sm-3.control-label(for="inputFilmLength") 片长
+							.col-sm-9
+								input#inputFilmLength.form-control(type="text", name="movie[filmLength]",value="#{movie.filmLength}",  plaeholder="请输入片长")
+						.form-group
+							label.col-sm-3.control-label(for="inputSourceUrl") 片源地址
+							.col-sm-9
+								input#inputSourceUrl.form-control(type="text", name="movie[sourceUrl]", value="#{movie.sourceUrl}", plaeholder="请输入片源地址")
+						.form-group
+							label.col-sm-3.control-label(for="inputBrief") 简介
+							.col-sm-9
+								textarea#inputBrief.form-control(type="textarea", name="movie[brief]", value="#{movie.brief}", rows="5",plaeholder="请输入简介") #{movie.brief}
+					button#submitButton.btn.btn-default(type="submit") 录入
+				.col-md-6.movie-preview
+					p 实时预览
+block afterContent
+	script(src="/javascripts/admin-entry.min.js")

@@ -17,13 +17,13 @@ block content
 										a.item-name(href="#") #{type}
 			.movie-list-wrap
 				.row
-					each movie in [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+					each movie in movies
 						.col-sm-6
 							.movie-box.clearfix
 								a(href="/detail/123").movie-cover
 									img(src="/images/captain.jpeg")
 								.movie-brief
-									a(href="/detail/123").brie-item.brief-name 机器总动员
-									p.brie-item.brief-crew 阿弗莱德·阿贝尔 / 古斯塔夫·佛力施 / 布里吉特·赫尔姆 / 鲁道夫·克莱恩-鲁格 
-									p.brie-item.brief-misc 2008 /  美国 / 喜剧 / 爱情 / 科幻 / 动画 / 冒险
-									p.brie-item.brief-rate 9.3510340人评价 
+									a(href="/detail/123").brie-item.brief-name #{movie.name}
+									p.brie-item.brief-crew #{movie.actor}
+									p.brie-item.brief-misc #{movie.misc}
+									p.brie-item.brief-rate #{movie.rate}

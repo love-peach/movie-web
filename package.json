@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/love-peach/movie-web#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "del": "^3.0.0",
     "express": "^4.16.2",
     "gulp": "^3.9.1",
@@ -40,6 +41,8 @@
     "gulp-uglify": "^3.0.0",
     "imagemin-pngquant": "^5.0.1",
     "jade": "^1.11.0",
-    "jshint": "^2.9.5"
+    "jshint": "^2.9.5",
+    "mongoose": "^4.13.0",
+    "underscore": "^1.8.3"
   }
 }

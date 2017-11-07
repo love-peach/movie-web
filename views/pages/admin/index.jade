@@ -1,61 +1,55 @@
+- tableData = [{name: '鬼子来了', director: '姜昆', actor: ['张三','李四', '王五'], time: '2017-08-12', rate: 9.2, language: '中文'}]
+
 extends ../../layout/index
 
 block afterHeadContent
 	link(rel="stylesheet", href="/stylesheets/admin.min.css")
 
 block content
-	.page-admin
+	.page-admin-index
 		.container
 			.row
-				.col-md-6.movie-entry
-					form.form-horizontal
-						.form-group
-							label.col-sm-3.control-label(for="name") 名称
-							.col-sm-9
-								input.form-control(id="name", type="text", plaeholder="电影名称")
-						.form-group
-							label.col-sm-3.control-label(for="alias") 别名
-							.col-sm-9
-								input.form-control(id="alias", type="text", plaeholder="电影别名（可不填）")
-						.form-group
-							label.col-sm-3.control-label(for="director") 导演
-							.col-sm-9
-								input.form-control(id="director", type="text", plaeholder="请输入导演")
-						.form-group
-							label.col-sm-3.control-label(for="screenwriter") 编剧
-							.col-sm-9
-								input.form-control(id="screenwriter", type="text", plaeholder="请输入编剧")
-						.form-group
-							label.col-sm-3.control-label(for="actor") 演员
-							.col-sm-9
-								input.form-control(id="actor", type="text", plaeholder="请输入演员")
-						.form-group
-							label.col-sm-3.control-label(for="type") 类型
-							.col-sm-9
-								input.form-control(id="type", type="text", plaeholder="请选择电影类型")
-						.form-group
-							label.col-sm-3.control-label(for="country") 制片国家/地区
-							.col-sm-9
-								input.form-control(id="country", type="text", plaeholder="请输入国家或地区")
-						.form-group
-							label.col-sm-3.control-label(for="email") 语言
-							.col-sm-9
-								input.form-control(id="language", type="text", plaeholder="请输入语言")
-						.form-group
-							label.col-sm-3.control-label(for="releaseTime") 上映时间
-							.col-sm-9
-								input.form-control(id="releaseTime", type="text", plaeholder="请输入上映时间")
-						.form-group
-							label.col-sm-3.control-label(for="filmLength") 片长
-							.col-sm-9
-								input.form-control(id="filmLength", type="number", plaeholder="请输入片长")
-						.form-group
-							label.col-sm-3.control-label(for="sourceUrl") 片源地址
-							.col-sm-9
-								input.form-control(id="sourceUrl", type="text", plaeholder="请输入片源地址")
-						.form-group
-							label.col-sm-3.control-label(for="brief") 简介
-							.col-sm-9
-								input.form-control(id="brief", type="textarea", rows="3",plaeholder="请输入简介")
-				.col-md-6.movie-preview
-					p 实时预览
+				.col-xs-12
+					.operation-bar
+						a.but.but-info.but-md(href='/admin/entry') 新增电影
+						input.float-right.input-search(placeholder="请输入关键字")
+
+					.board
+						table.table-wrap
+							thead.table-head
+								tr
+									th 名称
+									th 导演
+									//- th 编剧
+									th.hidden-sm.hidden-xs 主演
+									th 评分
+									th 类型
+									th 地区
+									th 语言
+									//- th(style="width: 100px;") 片长
+									th.visible-lg 上映日期
+									th.text-center 操作
+							tbody
+								each movie in movies
+									tr(class="movie-id-#{movie._id}")
+										td(style="min-width: 120px;")
+											a(href="/detail/#{movie._id}") #{movie.name}
+										td(style="min-width: 120px;") #{movie.director}
+										//- td #{movie.screenwriter}
+										td(style="width: 200px;").hidden-sm.hidden-xs
+											.text-ellipsis(style="width: 200px;") #{movie.actor}
+										td(style="min-width: 50px;") #{movie.rate}
+										td(style="min-width: 150px;") #{movie.type}
+										td(style="min-width: 70px;") #{movie.region}
+										td(style="min-width: 70px;") #{movie.language}
+										//- td #{movie.filmLength}
+										td(style="width: 150px;").visible-lg 
+											.text-ellipsis(style="width: 150px;") #{movie.releaseTime}
+										td(style="width: 112px;").text-right
+											.btn-wrap(style="width: 112px;display: inline-block;")
+												a.but.but-primary(href="/admin/update/#{movie._id}") 编辑
+												span.del.but.but-danger(data-id="#{movie._id}") 删除
+block afterContent
+	script(src="/javascripts/admin-list.min.js")
+	
+		

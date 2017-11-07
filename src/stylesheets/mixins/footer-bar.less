@@ -1,0 +1,33 @@
+.footer {
+	padding: 20px 0;
+	background-color: #06060b;
+	color: #60606d;
+	.footer-nav-bar {
+		.nav-item {
+			display: inline-block;
+			margin-bottom: 5px;
+			.nav-link{
+				padding: 0 8px;
+			}
+			.nav-link:hover{
+				color: #fff;
+			}
+		}
+		.nav-item + .nav-item{
+			line-height: 1;
+			border-left: 1px solid #60606d;
+		}
+	}
+	.friend-link {
+		margin: 0;
+		a {
+			padding: 0 8px;
+		}
+		a + a {
+			border-left: 1px solid #60606d;
+		}
+		a:hover {
+			color: #fff;
+		}
+	}
+}

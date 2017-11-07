@@ -6,7 +6,9 @@ html(lang="zh-cmn-Hans")
 		include ../include/head
 		block afterHeadContent
 	body
-		include ../include/header
-		block content
-		include ../include/footer
+		.page-content
+			include ../include/header
+			block content
+		.page-footer
+			include ../include/footer
 		block afterContent
