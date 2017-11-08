@@ -20,10 +20,10 @@ block content
 					each movie in movies
 						.col-sm-6
 							.movie-box.clearfix
-								a(href="/detail/123").movie-cover
+								a(href="/detail/#{movie._id}").movie-cover
 									img(src="/images/captain.jpeg")
 								.movie-brief
-									a(href="/detail/123").brie-item.brief-name #{movie.name}
+									a(href="/detail/#{movie._id}").brie-item.brief-name #{movie.name}
 									p.brie-item.brief-crew #{movie.actor}
 									p.brie-item.brief-misc #{movie.misc}
 									p.brie-item.brief-rate #{movie.rate}
