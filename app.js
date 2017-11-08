@@ -8,8 +8,8 @@ var Movie = require('./backstage/models/movie');
 
 var _ = require('underscore');
 
-
-mongoose.connect('mongodb://127.0.0.1:27017/movie_web');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://127.0.0.1:27017/movie_web', {useMongoClient:true});
 
 // 定义启动端口 默认为 3000; 其中 process 为全局变量，类似于浏览器中的 window 对象
 var port = process.env.PORT || 3000

@@ -49,8 +49,8 @@
 ## 启动项目
 
 1. 首先 安装项目依赖 `npm install` `bower install`
-2. 然后 构建静态资源 开发 `gulp watch` 生产 `gulp`
-3. 最后 启动 web 服务 `node app.js`
+2. 然后 构建静态资源 开发 `gulp watch` 生产 `gulp build`
+
 
 ## issue
 
