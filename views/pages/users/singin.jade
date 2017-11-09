@@ -1,0 +1,24 @@
+extends ../../layout/account
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/users.min.css")
+block content
+	.account-wrap.page-users-singin
+		h1.account-title 欢迎注册
+		input#inputAccount(type="text", name="account", placeholder="账户")
+		input#inputPasswrod(type="password", name="password", placeholder="密码")
+		input#inputPasswrodConfirm(type="password", name="passwordConfirm", placeholder="确认密码")
+		a.submit-singin.but.but-primary.but-md.but-full 立即注册
+		.extra-content.clearfix
+			.forget-password.text-left
+				i.iconfont.icon-checked-box-fill
+				span 我已阅读并接受
+			.quickly-entrance 已有账号?
+				a(href="/login") 马上登录
+		.third-account-wrap.text-center
+			p 第三方账号注册
+			a(href="/").iconfont.icon-qq
+			a(href="/").iconfont.icon-weixin
+			a(href="/").iconfont.icon-xinlang
+block afterBodyContent
+	script(src="/javascripts/account.min.js")

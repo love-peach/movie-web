@@ -5,8 +5,8 @@ $(document).ready(function () {
 		var sendData = getFormData();
 		$.ajax({
 			type: 'post',
-			url: "/admin/entry/new",
-			 headers: {
+			url: "/movie/new",
+		 	headers: {
 			 	'Accept': "application/xxx",
 			 	'Content-Type': "application/json; charset=utf-8",//(可以)
 		    },

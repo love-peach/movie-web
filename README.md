@@ -59,3 +59,6 @@
 项目按照正常配置，但是启动的时候就是报上面的错误，可能是依赖不全，执行`npm install -d`
 
 ### 如何在 jade 模板中定义一个多行的 json 数据
+
+## 参考链接
+[Express+Less+Gulp配置高效率开发环境](https://www.qcloud.com/community/article/627049001486519548)

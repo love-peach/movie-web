@@ -1,0 +1,73 @@
+/* 页面布局样式 */
+
+.page-content {
+	box-sizing: border-box;   
+    min-height: 100%;  
+    padding-bottom: @footerHeight + 20px;
+    background-image: url(/images/bg.jpg);
+}
+.page-footer {
+	margin-top: -@footerHeight;
+    height: @footerHeight;
+}
+
+@logoBarHeight: 60px;
+.page-users {
+	height: 100%;
+	width: 100%;
+	background-color: #333;
+	background: no-repeat url(/images/bg_titanic.jpg) center right;
+	background-size: cover;
+	.container {
+		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.logo-bar {
+		position: absolute;
+		top: 30px;
+		left: 15px;
+		color: #fff;
+		font-size: 20px;
+		.logo {
+		    height: @logoBarHeight;
+		    width: @logoBarHeight;
+		    display: inline-block;
+		    text-align: center;
+		    line-height: @logoBarHeight;
+		    border-radius: @logoBarHeight;
+		    color: #fff;
+		    font-size: 20px;
+			background: @colorPrimary;
+		}
+	}
+	.container-content {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		.ad-text-wrap {
+			color: #fff;
+			flex: 1;
+			padding: 10px 15px;
+			border-left: 3px solid #fff;
+			margin-bottom: 100px;
+			.ad-title {
+				font-size: 30px;
+			}
+			.ad-text {
+				font-size: 16px;
+			}
+		}
+		
+	}
+}
+.page-users:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+}

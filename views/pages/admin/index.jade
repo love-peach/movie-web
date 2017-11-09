@@ -11,7 +11,7 @@ block content
 			.row
 				.col-xs-12
 					.operation-bar
-						a.but.but-info.but-md(href='/admin/entry') 新增电影
+						a.but.but-info.but-md(href='/movie/entry') 新增电影
 						input.float-right.input-search(placeholder="请输入关键字")
 
 					.board
@@ -47,7 +47,7 @@ block content
 											.text-ellipsis(style="width: 150px;") #{movie.releaseTime}
 										td(style="width: 112px;").text-right
 											.btn-wrap(style="width: 112px;display: inline-block;")
-												a.but.but-primary(href="/admin/update/#{movie._id}") 编辑
+												a.but.but-primary(href="/movie/update/#{movie._id}") 编辑
 												span.del.but.but-danger(data-id="#{movie._id}") 删除
 block afterContent
 	script(src="/javascripts/admin-list.min.js")

@@ -1,0 +1,27 @@
+extends ../../layout/account
+
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/users.min.css")
+block content
+	.account-wrap.page-users-login
+		h1.account-title 欢迎登录
+		input#inputAccount(type="text", name="account", placeholder="账户")
+		input#inputPasswrod(type="password", name="password", placeholder="密码")
+		input#inputVerificationCode(type="text", name="verificationCode", placeholder="验证码")
+		button.submit-login.but.but-primary.but-md.but-full 登录
+		.extra-content.clearfix
+			.forget-password.text-left
+				i.iconfont.icon-uncheck-box
+				span 记住密码
+			.quickly-entrance
+				a(href="/sigup") 忘记密码
+				a(href="/sigup") 注册
+		.third-account-wrap.text-center
+			p 第三方账号登录
+			a(href="/").iconfont.icon-qq
+			a(href="/").iconfont.icon-weixin
+			a(href="/").iconfont.icon-xinlang
+block afterBodyContent
+	script(src="/javascripts/account.min.js")
+

@@ -1,0 +1,23 @@
+doctype
+html(lang="zh-cmn-Hans")
+	head
+		meta(chartset="utf-8")
+		title #{title}
+		include ../include/head
+		block afterHeadContent
+	body
+		.page-users
+			.container
+				a(href="/").logo-bar
+					i.iconfont.icon-dianyin.logo
+					span 一起看电影
+				.container-content
+					.ad-text-wrap.hidden-xs.hidden-sm
+						p.ad-title Jack, i am flying. 
+						p.ad-text 我的生命因为你，有了飞翔般的重生。
+						//- p.ad-title 生死相随
+						//- p.ad-text You jump ,I jump.
+					block content
+		script(src="/libs/jquery/dist/jquery.min.js")
+		script(src="/libs/bootstrap/dist/js/bootstrap.min.js")
+		block afterBodyContent

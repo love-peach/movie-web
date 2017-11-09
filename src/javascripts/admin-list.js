@@ -5,7 +5,7 @@ $(document).ready(function() {
 		// return;
 		$.ajax({
 			type: 'delete',
-			url: '/admin/delete/' + _id,
+			url: '/movie/delete/' + _id,
 			headers: {
 				'Accept': "application/xxx",
 				'Content-Type': "application/json; charset=utf-8",
