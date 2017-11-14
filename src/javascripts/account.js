@@ -10,7 +10,7 @@ $(document).ready(function() {
 		var sendData = getSendData('login');
 		$.ajax({
 			type: 'post',
-			url: '/users/login',
+			url: '/user/login',
 			headers: {
 			 	'Accept': "application/xxx",
 			 	'Content-Type': "application/json; charset=utf-8",//(可以)
@@ -31,7 +31,7 @@ $(document).ready(function() {
 		var sendData = getSendData('singin');
 		$.ajax({
 			type: 'post',
-			url: '/users/singin',
+			url: '/user/sigup',
 			headers: {
 			 	'Accept': "application/xxx",
 			 	'Content-Type': "application/json; charset=utf-8",//(可以)

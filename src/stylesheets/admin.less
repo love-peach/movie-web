@@ -1,5 +1,17 @@
 @import "./mixins/variable.less";
 
+.page-admin {
+	position: absolute;
+	top: @navbarHeight;
+	bottom: @footerHeight;
+	width: 100%;
+	.admin-manage-entrance {
+		float: left;
+		height: 100%;
+		width: 50%;
+	}
+}
+
 .page-admin-index {
 	padding-top: 20px;
 	.board {

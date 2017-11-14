@@ -10,8 +10,20 @@
 					each menu in menus
 						li.menu
 							a.menu-link.active(href="#{menu.href}") #{menu.title}
-				.acount
-					img.avatar(src="/images/captain.jpeg")
+				.account
+					if user
+						.account-user
+							img.avatar(src="/images/captain.jpeg")
+							ul.user-operation
+								li
+									a.user-name #{user.account}
+								li
+									a(href="/") 设置
+								li
+									a#logOut 退出
+					else
+						a.acount-link(href="/sigup") 注册
+						a.acount-link(href="/login") 登录
 				.search.hidden-xs
 					i.iconfont.icon-search
 					input.search-input(placeholder="请搜索名称，导演，演员")

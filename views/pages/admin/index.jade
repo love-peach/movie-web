@@ -1,55 +1,12 @@
-- tableData = [{name: '鬼子来了', director: '姜昆', actor: ['张三','李四', '王五'], time: '2017-08-12', rate: 9.2, language: '中文'}]
-
 extends ../../layout/index
 
 block afterHeadContent
 	link(rel="stylesheet", href="/stylesheets/admin.min.css")
 
 block content
-	.page-admin-index
-		.container
-			.row
-				.col-xs-12
-					.operation-bar
-						a.but.but-info.but-md(href='/movie/entry') 新增电影
-						input.float-right.input-search(placeholder="请输入关键字")
-
-					.board
-						table.table-wrap
-							thead.table-head
-								tr
-									th 名称
-									th 导演
-									//- th 编剧
-									th.hidden-sm.hidden-xs 主演
-									th 评分
-									th 类型
-									th 地区
-									th 语言
-									//- th(style="width: 100px;") 片长
-									th.visible-lg 上映日期
-									th.text-center 操作
-							tbody
-								each movie in movies
-									tr(class="movie-id-#{movie._id}")
-										td(style="min-width: 120px;")
-											a(href="/detail/#{movie._id}") #{movie.name}
-										td(style="min-width: 120px;") #{movie.director}
-										//- td #{movie.screenwriter}
-										td(style="width: 200px;").hidden-sm.hidden-xs
-											.text-ellipsis(style="width: 200px;") #{movie.actor}
-										td(style="min-width: 50px;") #{movie.rate}
-										td(style="min-width: 150px;") #{movie.type}
-										td(style="min-width: 70px;") #{movie.region}
-										td(style="min-width: 70px;") #{movie.language}
-										//- td #{movie.filmLength}
-										td(style="width: 150px;").visible-lg 
-											.text-ellipsis(style="width: 150px;") #{movie.releaseTime}
-										td(style="width: 112px;").text-right
-											.btn-wrap(style="width: 112px;display: inline-block;")
-												a.but.but-primary(href="/movie/update/#{movie._id}") 编辑
-												span.del.but.but-danger(data-id="#{movie._id}") 删除
+	.page-admin
+		a(href="/movie/list").admin-manage-entrance 电影管理
+		a(href="/user/list").admin-manage-entrance 用户管理
+		
 block afterContent
 	script(src="/javascripts/admin-list.min.js")
-	
-		

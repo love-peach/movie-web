@@ -70,13 +70,60 @@
 		}
 	}
 
-	.acount {
+	.account {
 		float: right;
-		.avatar {
-			height: 30px;
-			width: 30px;
-			margin: (@navbarHeight - 30)/2px 0;
-			border-radius: 100%;
+		.account-user {
+			position: relative;
+			cursor: pointer;
+			&:hover {
+				.user-operation {
+					display: block;
+				}
+			}
+			.avatar {
+				height: 30px;
+				width: 30px;
+				margin: (@navbarHeight - 30)/2px 0;
+				border-radius: 100%;
+			}
+			.user-operation {
+				display: none;
+				position: absolute;
+				z-index: 100;
+				top: 100%;
+				right: -15px;
+				background-color: #090723;
+				a {
+					display: inline-block;
+					padding: 5px 10px;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					width: 80px;
+					text-decoration: none;
+					&:hover {
+						color: #fff;
+					}
+				}
+				.user-name {
+					padding: 10px;
+					border-bottom: 1px solid #60606d;
+					&:hover {
+						color: #60606d;
+					}
+				}
+			}
+		}
+		.acount-link {
+			display: inline-block;
+			padding: 0 5px;
+			height: @navbarHeight;
+			line-height: @navbarHeight;
+			font-size: 14px;
+			text-decoration: none;
+			&:hover {
+				color: #fff;
+			}
 		}
 	}
 }

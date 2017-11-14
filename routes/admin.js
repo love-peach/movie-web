@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Movie = require('../backstage/controllers/movie');
+var Admin = require('../backstage/controllers/admin');
 
-router.get('/', Movie.list);
+router.get('/', Admin.index);
 
 module.exports = router;

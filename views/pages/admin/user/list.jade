@@ -1,0 +1,34 @@
+extends ../../../layout/index
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/admin.min.css")
+
+block content
+	.page-admin-index
+		.container
+			.row
+				.col-xs-12
+					.operation-bar
+						a.but.but-info.but-md(href='/movie/entry') 新增用户
+						input.float-right.input-search(placeholder="请输入关键字")
+
+					.board
+						table.table-wrap
+							thead.table-head
+								tr
+									th 名称
+									th 角色
+									th.text-center 操作
+							tbody
+								each user in users
+									tr(class="movie-id-#{user._id}")
+										td(style="min-width: 120px;") #{user.account}
+										td(style="min-width: 150px;") #{user.type}
+										td(style="width: 112px;").text-right
+											.btn-wrap(style="width: 112px;display: inline-block;")
+												a.but.but-primary(href="/movie/update/#{user._id}") 编辑
+												span.del.but.but-danger(data-id="#{user._id}") 删除
+block afterContent
+	script(src="/javascripts/admin-list.min.js")
+	
+		
