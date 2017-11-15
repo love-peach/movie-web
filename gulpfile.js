@@ -21,8 +21,8 @@
         notify = require('gulp-notify'); // 提示信息
 
     // 定义路径对象
-    var srcRoot = 'src/'; // 源目录文件夹 ./表示当前目录,这里没有设置./是因为需要监听新增的图片
-    var distRoot = './dist/'; // 输出目录文件夹
+    var srcRoot = 'public/'; // 源目录文件夹 ./表示当前目录,这里没有设置./是因为需要监听新增的图片
+    var distRoot = 'dist/'; // 输出目录文件夹
     var paths = {
         src: {
             less: srcRoot + 'stylesheets/',
@@ -140,7 +140,7 @@
     gulp.task('nodemon', function(cb) {
         var started = false;
         return nodemon({
-            script: 'app.js'
+            script: 'bin/www'
         }).on('start', function() {
             if (!started) {
                 cb();
@@ -153,7 +153,7 @@
     gulp.task('browser-sync', ['nodemon'], function() {
         browserSync.init(null, {
             proxy: "http://localhost:3000",
-            files: ["views/**/*", srcRoot + '**/*'],
+            files: ["views/**/*", distRoot + '**/*'],
             browser: "google chrome",
             notify: false,
             port: 4000
@@ -162,17 +162,14 @@
 
     //定义监听任务
     gulp.task('watch', ['browser-sync'], function() {
-        gulp.watch(paths.src.img + '*.+(jpeg|jpg|png|svg|gif|ico)', ['img']); //此任务好像没有效果？ 原因：用 './xx' 开头作为当前路径开始，会导致无法监测到新增文件，所以直接省略掉 './' 即可。'./images/*' === 'images/*'
+        gulp.watch(paths.src.img + '**/*', ['img']); //此任务好像没有效果？ 原因：用 './xx' 开头作为当前路径开始，会导致无法监测到新增文件，所以直接省略掉 './' 即可。'./images/*' === 'images/*'
         gulp.watch(paths.src.less + '**/*', ['css']);
         gulp.watch(paths.src.scripts + '**/*', ['js']);
     });
 
     // 清空dist目录下的所有文件
     gulp.task('clean', function() {
-        var imgDist = paths.dist.img;
-        var cssDist = paths.dist.css;
-        var jsDist = paths.dist.scripts;
-        del([imgDist, cssDist, jsDist])
+        del([paths.dist.img, paths.dist.css, paths.dist.scripts])
     });
     
     gulp.task('dev', function() {

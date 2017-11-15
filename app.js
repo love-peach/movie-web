@@ -11,8 +11,6 @@ const dbUrl = 'mongodb://127.0.0.1:27017/movie_web';
 // 实例化
 var app = express();
 
-var port = process.env.PORT || 3000;
-
 // 链接数据 配置数据库
 mongoose.Promise = global.Promise;
 mongoose.connect(dbUrl, {
@@ -38,7 +36,7 @@ app.use(session({
         url: dbUrl,
         collection: 'sessions'
     })
-}))
+}));
 
 // 设置 静态资源目录
 app.use(express.static(path.join(__dirname, 'dist')))
@@ -46,7 +44,36 @@ app.use(express.static(path.join(__dirname, 'dist')))
 // 引入路由
 require('./routes/routes')(app)
 
-// 监听服务
-app.listen(port, function() {
-    console.log('app is runing at http://localhost:' + port);
-})
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
+});
+
+
+module.exports = app;
