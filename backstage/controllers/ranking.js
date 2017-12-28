@@ -6,7 +6,7 @@ exports.list = function(req, res) {
         if (err) {
             console.log(err, '排行榜报错');
         } else {
-            res.render('ranking', {
+            res.render('ranking/ranking', {
                 title: '排行榜',
                 movies: movies
             })

@@ -6,7 +6,7 @@ exports.list = function(req, res) {
         if (err) {
             console.log(err, '选电影报错');
         } else {
-            res.render('explore', {
+            res.render('explore/explore', {
                 title: '选电影',
                 movies: movies
             })

@@ -6,7 +6,7 @@ exports.list = function(req, res) {
         if (err) {
             console.log(err, '后台列表页报错');
         } else {
-            res.render('admin/movie/list', {
+            res.render('admin/movie/movie-list/list', {
                 title: '管理后台-列表',
                 movies: movies
             })
@@ -20,7 +20,7 @@ exports.detail = function(req, res) {
         if (err) {
             console.log(err, '详情页报错');
         } else {
-            res.render('detail', {
+            res.render('detail/detail', {
                 title: '详情',
                 movie: movie
             })
@@ -59,7 +59,7 @@ exports.update = function(req, res) {
             if (err) {
                 console.log(err, '更新报错')
             } else {
-                res.render('admin/movie/entry', {
+                res.render('admin/movie/movie-entry/entry', {
                     title: '管理后台-更新',
                     movie: movie
                 })

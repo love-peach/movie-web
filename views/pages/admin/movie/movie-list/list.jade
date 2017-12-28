@@ -1,7 +1,7 @@
-extends ../../../layout/index
+extends ../../../../layout/index
 
 block afterHeadContent
-	link(rel="stylesheet", href="/stylesheets/admin.min.css")
+	link(rel="stylesheet", href="/stylesheets/admin/admin.min.css")
 		
 block content
 	.page-admin-index
@@ -48,4 +48,4 @@ block content
 													a.but.but-primary(href="/movie/update/#{movie._id}") 编辑
 													span.del.but.but-danger(data-id="#{movie._id}") 删除
 block afterContent
-	script(src="/javascripts/admin-list.min.js")
+	script(src="/javascripts/admin/movie/movie-list/admin-list.min.js")
