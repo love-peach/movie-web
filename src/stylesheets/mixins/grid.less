@@ -1,0 +1,79 @@
+/*--------------------------------- 栅格系统 begin ---------------------------------*/
+
+.@{prefix}-@{container} {
+  padding-left: @columns-padding;
+  padding-right: @columns-padding;
+  margin-right: auto;
+  margin-left: auto;
+  //min-width: @pageXsWidth;/*为了兼容不支持媒体选择的浏览器*/
+  box-sizing:border-box;
+  //overflow: hidden;
+  &:extend(.clearfix all);
+
+  width: @pageStaticWidth;
+  //@media (max-width: @screen-sm-min) {
+  //  width: @pageXsWidth;
+  //  min-width: 0;
+  //}
+  //@media (min-width: @screen-sm-min) {
+  //  width: @pageSmWidth;
+  //  min-width: 0;
+  //}
+  //@media (min-width: @screen-md-min) {
+  //  width: @pageMdWidth;
+  //  min-width: 0;
+  //}
+  //@media (min-width: @screen-lg-min) {
+  //  width: @pageLgWidth;
+  //  min-width: 0;
+  //}
+}
+
+.@{prefix}-@{row-name} {
+  min-height: 1px;
+  margin-left: -@columns-padding;
+  margin-right: -@columns-padding;
+  &:extend(.clearfix all);
+}
+
+[class*="@{prefix}-@{columns-name}"] {
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: @columns-padding;
+  padding-left: @columns-padding;
+  box-sizing:border-box;
+}
+
+.render-col(@length: 1) when (@length <= @grid-count) {
+  .@{prefix}-@{columns-name}-@{length} {
+    width: percentage(@length/@grid-count);
+  }
+  .render-col(@length + 1);
+}
+
+.render-col();
+
+
+/* 因为是固定尺寸，所以不需要媒体查询 */
+
+//.render-col(@type: xs, @length: 1) when (@length <= @grid-count) {
+//     .@{prefix}-@{columns-name}-@{type}-@{length} {
+//       width: percentage(@length/@grid-count);
+//     }
+//     .render-col(@type, @length + 1);
+//}
+//
+//// 媒体查询设置对应列类型css
+//.render-col(xs);
+//@media (min-width: @screen-sm-min) {
+//  .render-col(sm);
+//}
+//@media (min-width: @screen-md-min) {
+//  .render-col(md);
+//}
+//@media (min-width: @screen-lg-min) {
+//  .render-col(lg);
+//}
+
+/*--------------------------------- 栅格系统 end ---------------------------------*/

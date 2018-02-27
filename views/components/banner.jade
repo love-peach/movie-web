@@ -1,0 +1,8 @@
+mixin banner(items)
+    .banner-wrap.img-loading
+        .banner
+            ul
+                each item, index in items
+                    li
+                        a(href="#",style="background-image: url(" + item.poster + ")")
+

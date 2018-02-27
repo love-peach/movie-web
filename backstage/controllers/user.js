@@ -1,13 +1,13 @@
 var User = require('../models/user');
 
 exports.showLogin = function(req, res) {
-    res.render('login', {
+    res.render('login/login', {
         title: '登录',
     })
 }
 
 exports.showSignup = function(req, res) {
-    res.render('sigup', {
+    res.render('sigup/sigup', {
         title: '注册',
     })
 }

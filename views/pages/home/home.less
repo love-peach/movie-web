@@ -1,87 +1,27 @@
 @import "../../../src/stylesheets/mixins/variable.less";
 
-/* 轮播图样式 */
-.banner-wrp{
-	position: relative;
-	margin-bottom: 15px;
-	.banner {
-		li {
-			// height: 450px;
-			a {
-				display: block;
-				padding: 13.5% 0;
-				min-height: 240px;
-				max-height: 450px;
-				background-position: center;
-				background-size: cover;
-			}
-		}
-	}
-	.unslider-arrow {
-		display: none;
-		text-indent: -9999px;
-		top: 50%;
-		height: 60px;
-		width: 40px;
-		margin-top: -25px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-color: rgba(255,255,255,.4);
-		background-size: 50%;
-	}
-	.unslider-arrow.prev {
-		background-image: url(/images/arrow-prev.png);
-	}
-	.unslider-arrow.next {
-		background-image: url(/images/arrow-next.png);
-	}
-	&:hover {
-		.unslider-arrow {
-			display: block;
-		}
-	}
-}
+// 轮播图基本样式
+@import "../../../src/stylesheets/unslider/unslider.less";
+@import "../../../src/stylesheets/components/banner.less";
+
+// list-layout 样式
+@import "../../../src/stylesheets/components/list-layout.less";
+
+// section-title-bar 样式
+@import "../../../src/stylesheets/components/section-title-bar.less";
+
+
+
 
 .page-home {
-	.recommend {
-		margin-bottom: 20px;
-	}
-	.recommend-title {
-		color: @textMiddle;
-		display: block;
-		margin: 30px 0 15px;
-		font-size: 16px;
-	}
-	.recommend-video-wrap {
-		overflow: hidden;
-		width: 100%;
-		.recommend-video {
-			float: left;
-			height: 195px;
-			padding: 1px;
-			width: 27%;
-		}
-		.recommend-video:first-child {
-			height: 390px;
-			width: 46%;
-		}
-		.video-cover-wrap {
-			height: 100%;
-			width: 100%;
-			overflow: hidden;
-		}
-		.video-cover {
-			height: 100%;
-			width: 100%;
-			background-size: cover;
-			background-position: top center;
-			transform: scale(1);
-			transition: transform .3s ease;
-		}
-		.recommend-video:hover {
-			.video-cover {
-				transform: scale(1.1);
-			}
+	.section-part {
+		background-color: #fff;
+		padding: 20px 0;
+		.some-content {
+			text-align: center;
+			height: 175px;
+			background: @colorSuccess;
+			border-radius: @radiusSize;
 		}
 	}
 }

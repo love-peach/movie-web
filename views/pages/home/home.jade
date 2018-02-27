@@ -5,32 +5,18 @@ block afterHeadContent
 
 block content
 	.page-home
-		.banner-wrp
-			.banner
-				ul
-					li
-						a(href="/",style="background-image: url(/images/bg-2.jpg)")
-					li
-						a(href="/",style="background-image: url(/images/bg-2.jpg)")
-					li
-						a(href="/",style="background-image: url(/images/bg-2.jpg)")
-					li
-						a(href="/",style="background-image: url(/images/bg-2.jpg)")
-					li
-						a(href="/",style="background-image: url(/images/bg-2.jpg)")
-		.container
-			.row
-				mixin moviePreview(movies)
-					.recommend
-							a.recommend-title.text-center(href="/") 科幻电影12
-							.recommend-video-wrap
-								each item in movies
-									.recommend-video
-										.video-cover-wrap
-											.video-cover(style="background-image: url(#{item.sourceUrl})")
-				+moviePreview(movies)
-				+moviePreview(movies)
-				+moviePreview(movies)
+		.section-part
+			.mw-container
+				+banner(bannerData)
+				.mw-row
+					each item in [1,2,3,4]
+						.mw-col-15
+							.some-content someText
+		.mw-container
+			each model in modelsData
+				+listLayout(model, {lazyImg: false})
+
+
 
 block afterContent
 	script(src="/javascripts/unslider.min.js")

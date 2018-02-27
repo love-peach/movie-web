@@ -1,7 +1,12 @@
-extends ../layout/index
+extends ../../layout/index
+
+block afterHeadContent
+	link(rel="stylesheet", href="/stylesheets/review/review.min.css")
 
 block content
 	.page-review
-		.container
-			.row
-				p 影评 
+		.mw-container
+			ul.review-list-wrap
+				each movie, index in movies
+					li
+						+listItemReview(movie)

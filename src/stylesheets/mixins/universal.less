@@ -1,0 +1,68 @@
+/*--------------------------------- 常用样式 begin ---------------------------------*/
+
+// 改变盒子模型
+// Box sizing
+.box-sizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+    -moz-box-sizing: @boxmodel;
+    box-sizing: @boxmodel;
+}
+
+
+@import "./variable.less";
+body {
+    color: @colorDark;
+    background-color: @colorSilver;
+}
+
+* {
+    .box-sizing(border-box);
+}
+*:before,
+*:after {
+    .box-sizing(border-box);
+}
+
+//a标签颜色inherit,可以继承父元素颜色
+a {
+    outline: 0;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover {
+    color: @colorInfo;
+}
+img {
+    background: @colorDark no-repeat url(/images/movie-gray.png) center center;
+    background-size: auto 15%;
+    user-select: none;
+}
+
+/* 文字省略号 */
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*===== 文字居中 ======*/
+.text-center {
+    text-align: center;
+}
+
+// 清除浮动
+.clearfix {
+    .clearfix();
+}
+
+/*===== img loading =====*/
+.img-loading {
+    background: @colorDark no-repeat url('/images/movie-gray.png') center center;
+    background-size: auto 15%;
+}
+/*--------------------------------- 常用样式 end ---------------------------------*/
+
+
+
+

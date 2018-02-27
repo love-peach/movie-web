@@ -1,0 +1,13 @@
+mixin listItem(data, config)
+    .list-item-wrap
+        a.list-cover-wrap(href="#")
+            .img-cover-wrap
+                img.img-cover(src="#{data && data.poster ? data.poster : 'https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507022339.jpg'}", onerror="imgError(this)", ondragstart="return false;")
+        .list-info-wrap
+            a(href="#").info-name.text-ellipsis 肖申克的救赎肖申克的救赎肖申克的救赎肖申克的救赎
+            p.info-director 城开个
+            span.info-score 7.9
+            span.info-type 奇幻
+
+            .list-describe.text-ellipsis #{data && data.subTitle ? data.subTitle : data.focus}
+

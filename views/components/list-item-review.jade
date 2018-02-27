@@ -1,0 +1,28 @@
+mixin listItemReview(data, config)
+    .list-item-wrap-review
+
+        .mw-row
+            .mw-col-10
+                a.list-cover-wrap(href="#")
+                    .img-cover-wrap
+                        img.img-cover(src="#{data && data.poster ? data.poster : 'https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507022339.jpg'}", onerror="imgError(this)", ondragstart="return false;")
+            .mw-col-50
+                .list-info-wrap
+                    .review-head
+                        h2.review-head-title 这个好看，炒鸡好看。
+                        .review-head-info
+                            span.info-author 作者：李大庄
+                            span.info-movie 影片：
+                                a 肖申克的救赎
+
+                        time.head-time
+                            span.time-day 22
+                            span.time-month Sept
+                            span.time-year 2018
+                    .info-rate 评价
+                    p.info-misc 观影前的历史。 当诺兰的电影《敦刻尔克》把镜头聚焦在普通人身上时，这场「胜利大逃亡」只是丘吉尔当上首相后，所面临众多难题之一。 丘吉尔接手的绝对是个百年不遇的烂摊子。 在二战前夕，丘吉尔提出有争议的政见而在国内树敌颇多，经历了跌宕起伏的议会生涯，却又在腹背受敌..
+
+
+
+
+

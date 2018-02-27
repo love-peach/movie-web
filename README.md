@@ -52,6 +52,10 @@
 2. 然后 构建静态资源 开发 `gulp watch` 生产 `gulp build`
 
 
+## 笔记
+
+1. less 文件中 两种注释的区别
+
 ## issue
 
 ### Cannot find module 'jade'

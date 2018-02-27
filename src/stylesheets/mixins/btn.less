@@ -1,0 +1,77 @@
+/* 按钮样式 */
+.but {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none !important;
+  border-radius: 3px;
+  border: 1px solid @borderColor;
+  cursor: pointer;
+
+  &-md {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  &-full {
+    width: 100%;
+  }
+
+  &-default {
+    color: @textMiddle;
+    background-color: #fff;
+    border: 1px solid @borderColor;
+  }
+
+  &-primary {
+    color: #fff !important;
+    background-color: @colorPrimary;
+    border-color: @colorPrimary;
+    &:hover {
+      background-color: saturate(@colorPrimary, 20%)
+    }
+  }
+  &-success {
+    color: #fff !important;
+    background-color: @colorSuccess;
+    border-color: @colorSuccess;
+    &:hover {
+      background-color: saturate(@colorSuccess, 20%)
+    }
+  }
+  &-info {
+    color: #fff !important;
+    background-color: @colorInfo;
+    border-color: @colorInfo;
+    &:hover {
+      background-color: saturate(@colorInfo, 20%)
+    }
+  }
+  &-warning {
+    color: #fff !important;
+    background-color: @colorWarning;
+    border-color: @colorWarning;
+    &:hover {
+      background-color: saturate(@colorWarning, 20%)
+    }
+  }
+  &-danger {
+    color: #fff !important;
+    background-color: @colorDanger;
+    border-color: @colorDanger;
+    &:hover {
+      background-color: saturate(@colorDanger, 20%)
+    }
+  }
+  &-dark {
+    color: #fff !important;
+    background-color: @colorDark;
+    border-color: @colorDark;
+    &:hover {
+      background-color: saturate(@colorDark, 20%)
+    }
+  }
+}

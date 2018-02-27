@@ -1,0 +1,77 @@
+@import "../mixins/variable.less";
+
+.list-item-wrap-ranking {
+  position: relative;
+  background: #fff;
+  font-size: 0;
+  transition: all .2s linear;
+  border-radius: @radiusSize;
+  &:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0, -2px, 0);
+  }
+  .ranking-order {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    width: 60px;
+    height: 63px;
+    border-radius: 30px 4px 30px 30px;
+    background: #fff;
+    .ranking-order-number {
+      color: #fff;
+      display: block;
+      padding-top: 15px;
+      text-align: center;
+      font: bold 26px "Impact";
+    }
+    &.ranking-normal {
+      background: @colorInfo;
+    }
+    &.ranking-red {
+      background: @colorDanger;
+    }
+  }
+  .list-cover-wrap {
+    display: inline-block;
+    .img-cover-wrap {
+      height: 295px;
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: @radiusSize 0 0 @radiusSize;
+      }
+    }
+  }
+  .list-info-wrap {
+    padding: 15px 20px 0 0 ;
+    font-size: 14px;
+    color: @colorGreyHeavy;
+    .info-name {
+      display: block;
+      color: @colorDark;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .info-actor {
+      text-align: justify;
+    }
+    .info-actor,
+    .info-misc,
+    .info-type{
+      margin-bottom: 5px;
+    }
+    .info-score {
+      position: absolute;
+      top: 260px;
+      left: 10px;
+      color: @colorDanger;
+      &:first-letter {
+        font-size: 16px;
+      }
+    }
+  }
+}

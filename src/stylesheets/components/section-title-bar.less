@@ -1,0 +1,22 @@
+@import "../mixins/variable.less";
+
+.section-title-bar {
+  position: relative;
+  color: @colorDark;
+  .title-text {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+  }
+  .title-more-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    .more-text {
+      display: inline-block;
+      padding: 16px 0 0;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import "../mixins/variable.less";
+
+.list-item-wrap-review {
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  transition: all .2s linear;
+  border-radius: @radiusSize;
+  &:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0, -2px, 0);
+  }
+  .review-head {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @colorSilver;
+    padding-right: 100px;
+    position: relative;
+    .review-head-title {
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.1;
+      color: @colorDark;
+    }
+    .review-head-info {
+      color: @colorGrey;
+      font-size: 12px;
+      .info-author {
+        margin-right: 20px;
+      }
+
+    }
+    .head-time {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: @colorGrey;
+      font-size: 14px;
+      .time-day {
+        position: absolute;
+        top: -13px;
+        left: -50px;
+        font-size: 42px;
+        color: @colorSuccess;
+      }
+      .time-month,
+      .time-year{
+        display: block;
+      }
+      .time-month {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .list-cover-wrap {
+    display: inline-block;
+    .img-cover-wrap {
+      height: 250px;
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

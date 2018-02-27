@@ -5,9 +5,9 @@ block afterHeadContent
 		
 block content
 	.page-admin-index
-			.container
-				.row
-					.col-xs-12
+			.mw-container
+				.mw-row
+					.mw-col-xs-12
 						.operation-bar
 							a.but.but-info.but-md(href='/movie/entry') 新增电影
 							input.float-right.input-search(placeholder="请输入关键字")
@@ -31,7 +31,7 @@ block content
 									each movie in movies
 										tr(class="movie-id-#{movie._id}")
 											td(style="min-width: 120px;")
-												a(href="/detail/#{movie._id}") #{movie.name}
+												a(href="/movie/detail/#{movie._id}") #{movie.name}
 											td(style="min-width: 120px;") #{movie.director}
 											//- td #{movie.screenwriter}
 											td(style="width: 200px;").hidden-sm.hidden-xs

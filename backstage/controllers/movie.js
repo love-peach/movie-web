@@ -30,7 +30,7 @@ exports.detail = function(req, res) {
 
 // movie entry page
 exports.entry = function(req, res) {
-    res.render('admin/movie/entry', {
+    res.render('admin/movie/movie-entry/entry', {
         title: '管理后台-录入',
         movie: {
             _id: '',
@@ -86,6 +86,7 @@ exports.save = function(req, res) {
     var id = movieObj._id;
     var _movie;
 
+
     if (id) {
         Movie.findById(id, function(err, movie) {
             if (err) {
@@ -96,7 +97,7 @@ exports.save = function(req, res) {
                     if (err) {
                         console.log(err)
                     } else {
-                        res.redirect('/detail/' + movie._id);
+                        res.redirect('/movie/detail/' + movie._id);
                     }
                 })
             }
@@ -121,7 +122,33 @@ exports.save = function(req, res) {
             if (err) {
                 console.log(err, '新增出错')
             } else {
-                res.redirect(301, '/detail/' + movie._id);
+                console.log(movie, 'movie1111');
+                // res.redirect('/');
+
+                // res.writeHead(302, {
+                //     'Location': '/movie/detail/' + movie._id
+                //     //add other headers here...
+                // });
+                // res.render('想要内容');
+
+                // res.render('home/home', {
+                //     title: '主页',
+                // });
+                // res.write(200, '990');
+                // res.end();
+                // res.writeHead(200, {'Content-Type': 'text/plain'});
+                res.status(200);
+                res.json({name: 211});
+                // res.end();
+                // res.location('/movie/detail/' + movie._id);
+                //
+                // this.detail;
+                // res.end('ddf')
+                // res.render('admin/movie/movie-list/list', {
+                //     title: '管理后台-列表',
+                //     movies: movies
+                // })
+                // res.redirect(302, '/movie/detail/' + movie._id);
             }
         })
     }

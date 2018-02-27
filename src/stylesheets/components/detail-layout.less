@@ -1,0 +1,80 @@
+@import "../mixins/variable.less";
+
+// 相关推荐
+.related-recommendation {
+  #position-recommendation {
+    position: relative;
+    width: 1/@100rem;
+    height: 1/@100rem;
+    top: -53/@100rem;
+    left: 0;
+    //background: red;
+  }
+  padding-top: 20/@100rem;
+  .head {
+    font-size: 20/@100rem;
+    color: #eeeeee;
+  }
+  .content {
+    //display: flex;
+    //flex-wrap:wrap;
+    margin-right: -35/@100rem;
+    //min-height: 800/@100rem;
+  }
+  .recommend {
+    //width:180/@100rem;
+    margin: 22/@100rem 35/@100rem 0 0;
+    float: left;
+
+    .list-cover-wrap {
+      width:100%;
+      height:100%;
+    }
+    .film-photo {
+      width:195/@100rem;
+      height:105/@100rem;
+      position: relative;
+      overflow: hidden;
+      //background: url("http://pic8.qiyipic.com/image/20171113/34/c7/v_113936813_m_601_m1_180_101.jpg") no-repeat;
+      //background-size:100% 100%;
+
+      img {
+        width:100%;
+        height:100%;
+      }
+      .info {
+        font-style: normal;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        //background: #8e8e8e;
+        color: #fff;
+        font-size: 14/@100rem;
+        height: 47px;
+        line-height: 61px;
+        padding-left: 8/@100rem;
+        background-image:url('/images/video-detail-bg.png');
+        background-repeat: repeat-x;
+        background-size: 100% 100%;
+        //background:-webkit-gradient(linear,0 0,0 bottom,from(rgba(255,255,255,0)),to(rgba(0,0,0,.9)));
+      }
+    }
+    .film-info {
+      width:195/@100rem;
+      //background:-webkit-gradient(linear,0 0,0 bottom,from(rgba(62,48,99,.9)),to(rgba(44,34,72,.9)));
+      background:rgba(0,0,0,.2);
+
+    }
+    .film-name {
+      font-size: 14/@100rem;
+      color: #ffffff;
+      padding:8/@100rem 0 8/@100rem 8/@100rem;
+    }
+    .film-plays {
+      padding:0 0 8/@100rem 8/@100rem;
+      font-size: 12/@100rem;
+      color: #9d9d9d;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+mixin filterBar(data)
+    ul.filter-bar-wrap.clearfix
+        each filter in data
+            li
+                a.current #{filter.current}
+                ul
+                    each children in filter.child
+                        li
+                            a(href='#') #{children.text}
+
+
+
+
+

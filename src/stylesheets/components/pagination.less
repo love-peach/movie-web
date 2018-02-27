@@ -1,0 +1,38 @@
+@import "../mixins/variable.less";
+
+@pageItemSize: 40px;
+
+._pagination{
+  margin: 20px 0;
+  font-size: 12px;
+  text-align: center;
+  a,
+  span {
+    box-sizing: content-box;
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: @pageItemSize;
+    min-width: 20px;
+    line-height: @pageItemSize;
+    text-align: center;
+    color: #989898;
+    border: 1px solid #707070;
+    border-radius: 5px;
+  }
+  a:hover {
+    color: #fff;
+    background-color: #707070;
+  }
+  .current {
+    color: @colorSuccess;
+    border: 1px solid @colorSuccess;
+  }
+  .current.prev,
+  .current.next {
+    color: #989898;
+    border: 1px solid #707070;
+  }
+}

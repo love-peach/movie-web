@@ -1,4 +1,4 @@
-@navbarHeight: 60px;
+@navbarHeight: 56px;
 @footerHeight: 85px;
 
 @textHeavy: #333;
@@ -8,11 +8,58 @@
 
 @borderColor: #eaeef1;
 
-@bgColor: #4cb6cb;
-
 @colorPrimary: #545ca6;
-@colorInfo: #4cb6cb;
-@colorSuccess: #1ab667;
-@colorWarning: #fad733;
-@colorDanger: #f05050;
-@colorDark: #5a6a7a;
+
+@colorSilver: #f5f5f5;  /* 背景色*/
+@colorGreyLight: #e0e0e0;
+@colorGrey: #b0b0b0;
+@colorGreyHeavy: #616161;
+@colorDark: #333;
+@colorWarning: #ffac13;
+@colorSuccess: #83c44e;
+@colorDanger: #e53935;
+@colorInfo: #2196f3;
+
+
+@radiusSize: 4px;
+
+
+/*===== 响应式相关变量 =====*/
+// 前缀名称
+@prefix: mw;
+
+// 容器名
+@container: container;
+
+// 行名
+@row-name: row;
+
+// 列名
+@columns-name: col;
+
+// 列边距
+@columns-padding: 10px;
+
+// 栅格数（把屏幕分为12份）
+@grid-count: 60;
+
+// 页面固定宽度
+@pageStaticWidth: 1226px;
+
+
+
+
+// 响应对应尺寸 因为是固定尺寸，所以用不着响应式
+@pageXsWidth: 100%;
+@pageSmWidth: 750px;
+@pageMdWidth: 970px;
+@pageLgWidth: 1170px;
+
+@screen-xs-min: 480px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+@screen-xs-max: (@screen-sm-min - 1);
+@screen-sm-max: (@screen-md-min - 1);
+@screen-md-max: (@screen-lg-min - 1);

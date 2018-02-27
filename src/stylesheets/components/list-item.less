@@ -1,0 +1,57 @@
+@import "../mixins/variable.less";
+
+@borderRadius10: 5px;
+.list-item-wrap {
+  background-color: #fff;
+  transition: all .2s linear;
+  border-radius: @radiusSize;
+  &:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    transform: translate3d(0, -2px, 0);
+  }
+  .list-cover-wrap {
+    display: block;
+    .img-cover-wrap {
+      height: 315px;
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        //height: 100%;
+        border-radius: @radiusSize @radiusSize 0 0;
+      }
+    }
+  }
+  .list-info-wrap {
+    position: relative;
+    height: 50px;
+    padding: 6px 8px;
+    .info-name {
+      display: block;
+      margin-right: 25px;
+      color: @colorDark;
+    }
+    .info-director {
+      color: @colorGrey;
+      font-size: 12px;
+    }
+    .info-score,
+    .info-type {
+      position: absolute;
+      right: 8px;
+      font-size: 12px;
+      line-height: 1;
+    }
+    .info-score {
+      top: 7px;
+      color: @colorDanger;
+      &:first-letter {
+        font-size: 16px;
+      }
+    }
+    .info-type {
+      bottom: 7px;
+      color: @colorGrey;
+    }
+  }
+}

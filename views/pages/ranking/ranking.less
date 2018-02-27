@@ -1,74 +1,136 @@
-.page-ranking {
-	.category-group-wrap {
-		margin: 20px 0;
-		border-bottom: 1px dashed #ccc;
-	}
-	.category-group {
-		margin: 10px 0;
+@import "../../../src/stylesheets/mixins/variable.less";
+// list-item-ranking 样式
+@import "../../../src/stylesheets/components/list-item-ranking.less";
 
-		.category-nane {
-			float: left;
-			width: 50px;
-			padding: 10px 0;
-			line-height: 14px;
+// pagination 样式
+@import "../../../src/stylesheets/components/pagination.less";
+
+
+
+.page-ranking {
+	/* 内凹圆角样式 */
+	.concave-radius {
+		position: relative;
+		height: 100px;
+		width: 100px;
+		overflow: hidden;
+		&:before {
+			content: '';
+			width: 200%;
+			height: 200%;
+			position: absolute;
+			background: radial-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0) 69%, rgba(0,0,0,.1), 70.6%, #fff 70.7%, #fff 100%); /* 标准的语法 */
 		}
-		.category-nane:after{
-			content: ':';
+		&.top-left:before {
+			top: 0;
+			left: 0;
 		}
-		.category-list {
-			padding-left: 50px;
-			.list-item {
-				float: left;
-				margin-right: 10px;
-				margin-bottom: 10px;
+		&.top-right:before {
+			top: 0;
+			right: 0;
+		}
+		&.bottom-left:before {
+			bottom: 0;
+			left: 0;
+		}
+		&.bottom-right:before {
+			top: 0;
+			right: 0;
+		}
+	}
+
+	/* banner 条样式 以及分类样式*/
+	.section-top-part {
+		background-color: #fff;
+		margin-bottom: 30px;
+		box-shadow: 1px 3px 10px rgba(0,0,0,0.1);
+		.part-banner {
+			border-bottom: 1px solid @colorGreyLight;
+			.banner-content {
+				height: 120px;
+				border-radius: @radiusSize;
+				margin: 20px 0;
+				background: @colorSuccess;
 			}
-			.list-item.active {
-				.item-name{
-					color: #fff;
-					background: #4cb6cb;
+		}
+		.part-category {
+			position: relative;
+			.category-title {
+				height: 60px;
+				line-height: 60px;
+				font-weight: 200;
+				font-size: 22px;
+			}
+			.more-type-wrap {
+				position: absolute;
+				height: 60px;
+				top: 0;
+				right: 0;
+				padding-top: 26px;
+				cursor: pointer;
+				&:hover {
+					color: @colorInfo;
+					.more-type-content {
+						height: 40 * 3px + 20px;
+						display: block;
+					}
 				}
-			}
-			.item-name {
-				color: red;
-				font-size: 14px;
-				display: inline-block;
-				padding: 10px 15px;
-				line-height: 14px;
-				border-radius: 3px;
-				text-decoration: none;
+				.more-type-content {
+					height: 0;
+					position: absolute;
+					top: 100%;
+					right: -10px;
+					z-index: 100;
+					overflow: hidden;
+					transition: all .3s ease-out;
+					cursor: default;
+				}
+				.concave-radius {
+					height: 15px;
+					width: 15px;
+					position: absolute;
+					top: 0;
+				}
+				.position-right {
+					right: 0;
+				}
+				.position-left {
+					left: 0;
+				}
+				.more-type {
+					width: 65 * 5px;
+					margin: 0 15px;
+					background-color: #fff;
+					box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+					border-radius: 0 0 @radiusSize*2 @radiusSize*2;
+					li {
+						display: inline-block;
+						width: 65px;
+					}
+					a {
+						display: block;
+						padding: 0 10px;
+						height: 32px;
+						line-height: 32px;
+						margin: 4px 5px;
+						text-align: center;
+						color: @colorDark;
+						&:hover {
+							background-color: @colorSuccess;
+							color: #fff;
+						}
+					}
+
+				}
 			}
 		}
 	}
+
+	/* 列表样式 */
 	.movie-list-wrap {
-		.movie-box {
-			padding: 25px 15px 10px;
-			border-bottom: 1px dashed #ccc;
-			.movie-cover {
-				float: left;
-				width: 120px;
-				height: 130px;
-				img{
-					width: 100%;
-					height: 100%;
-				}
-			}
-			.movie-brief {
-				padding-left: 140px;
-				color: #666;
-				.brie-item {
-					margin-bottom: 15px;
-					width: 100%;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					white-space: nowrap;
-				}
-				.brief-name {
-					display: block;
-					color: #37a;
-				}
-				.brief-misc {
-					margin-bottom: 25px;
-				}
+		&>ul{
+			&>li {
+				margin-bottom: 20px;
 			}
 		}
 	}
