@@ -1,0 +1,17 @@
+mixin scoreStart(score, config)
+    - elWidth = config.showText ? 7 : 5
+    .score-start-wrap(sty;e="width: #{elWidth}em")
+        - percent = (Math.round(score / 10 * 10000) / 100.00 + "%")
+        .star-wrap
+            .start-active(style="width: #{percent}")
+                each i in [1,2,3,4,5]
+                    i.iconfont.icon-iconfontstart
+            .start-default
+                each i in [1,2,3,4,5]
+                    i.iconfont.icon-iconfontstart
+        if config.showText
+            span.start-num #{score}
+
+
+
+

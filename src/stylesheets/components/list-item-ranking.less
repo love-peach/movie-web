@@ -1,4 +1,5 @@
 @import "../mixins/variable.less";
+@import "./score-start.less";
 
 .list-item-wrap-ranking {
   position: relative;
@@ -15,14 +16,14 @@
     top: 0;
     right: 0;
     z-index: 99;
-    width: 60px;
-    height: 63px;
-    border-radius: 30px 4px 30px 30px;
+    width: 50px;
+    height: 52px;
+    border-radius: 25px 4px 25px 25px;
     background: #fff;
     .ranking-order-number {
       color: #fff;
       display: block;
-      padding-top: 15px;
+      padding-top: 10px;
       text-align: center;
       font: bold 26px "Impact";
     }
@@ -68,10 +69,15 @@
       position: absolute;
       top: 260px;
       left: 10px;
-      color: @colorDanger;
-      &:first-letter {
-        font-size: 16px;
-      }
+      color: @colorWarning;
+      font-size: 16px;
+    }
+    .info-score-amount {
+      display: inline-block;
+      margin-left: 1em;
+      margin-bottom: 2px;
+      color: @colorGrey;
+      font-size: 14px;
     }
   }
 }

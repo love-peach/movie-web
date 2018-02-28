@@ -1,0 +1,27 @@
+@import "../mixins/variable.less";
+
+.score-start-wrap {
+  //width: 7em;
+  display: inline-block;
+  .star-wrap {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+  }
+  .start-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  .start-default {
+    display: inline-block;
+    color: @colorGreyLight;
+  }
+  .start-num {
+    margin-left: .5em;
+  }
+  .iconfont {
+    font-size: inherit;
+  }
+}
