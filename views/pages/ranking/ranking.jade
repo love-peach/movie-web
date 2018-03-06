@@ -11,7 +11,7 @@ block content
 					.banner-content banner-content
 			.mw-container
 				.part-category
-					h2.category-title 分类排行旁 - 剧情
+					h2.category-title #{pageTitle}
 					.more-type-wrap 更多类型
 						.more-type-content
 							.concave-radius.top-left.position-right
@@ -27,21 +27,9 @@ block content
 					each movie, index in movies
 						li.mw-col-30
 							+listItemRanking(movie, {rank: index + 1})
-			._pagination
+			a.load-more 加载更多
+				.loader
+			//._pagination
 block afterContent
 	script(src="/javascripts/jquery.pagination.min.js")
-	script.
-		function testPagination(new_page_index, pagination_container) {
-			console.log(new_page_index, pagination_container);
-		}
-		$('._pagination').pagination(100, {
-			callback: testPagination,
-			current_page: 0,
-			items_per_page: 20,	// 每页每页显示的记录条数	数字	10
-			num_display_entries: 5,	// 最多显示的页码数	数字	11
-			next_show_always: true,	// 如果设置为false‘下一页’按钮只有在还能增加页码的情况下才显示	布尔值	true
-			prev_show_always: true,	// 如果设置为false‘上一页’按钮只有在还能导航到前一页的情况下才显示	布尔值	true
-			num_edge_entries: 1,	// 如果设为1，那么永远会显示首页和末页	1或0	0
-			link_to: '',
-		})
-
+	script(src="/javascripts/ranking/ranking.min.js")

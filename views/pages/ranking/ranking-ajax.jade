@@ -1,0 +1,4 @@
+include ../../components/list-item-ranking.jade
+each movie, index in movies
+    li.mw-col-30
+        +listItemRanking(movie, {rank: start + index + 1 })

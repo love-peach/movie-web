@@ -3,7 +3,7 @@ mixin listItemReview(data, config)
 
         .mw-row
             .mw-col-10
-                a.list-cover-wrap(href="#")
+                a.list-cover-wrap(href="/movie/detail/#{data._id}")
                     .img-cover-wrap
                         img.img-cover(src="#{data && data.poster ? data.poster : 'https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507022339.jpg'}", onerror="imgError(this)", ondragstart="return false;")
             .mw-col-50
@@ -13,7 +13,7 @@ mixin listItemReview(data, config)
                         .review-head-info
                             span.info-author 作者：李大庄
                             span.info-movie 影片：
-                                a 肖申克的救赎
+                                a(href="/movie/detail/#{data._id}") 肖申克的救赎
 
                         time.head-time
                             span.time-day 22

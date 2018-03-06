@@ -5,6 +5,8 @@
 // pagination 样式
 @import "../../../src/stylesheets/components/pagination.less";
 
+
+
 .page-ranking {
 	/* 内凹圆角样式 */
 	.concave-radius {
@@ -132,5 +134,32 @@
 				margin-bottom: 20px;
 			}
 		}
+	}
+
+	/* 加载更多 */
+	.load-more {
+		position: relative;
+		display: block;
+		margin: 0 0 20px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 14px;
+		color: #fff;
+		background-color: @colorSuccess;
+		border-radius: @radiusSize;
+	}
+	.loader {
+		position: relative;
+		top: 8px;
+		margin-left: 10px;
+		display: inline-block;
+		height: 2em;
+		width: 2em;
+
+		//position: absolute;
+		//top: 50%;
+		//left: 50%;
+		//transform: translate(-50%, -50%);
 	}
 }

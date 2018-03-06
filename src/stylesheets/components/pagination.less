@@ -19,20 +19,24 @@
     line-height: @pageItemSize;
     text-align: center;
     color: #989898;
-    border: 1px solid #707070;
+    border: 1px solid @colorGreyLight;
     border-radius: 5px;
+    background-color: #fff;
   }
   a:hover {
     color: #fff;
-    background-color: #707070;
+    border: 1px solid @colorSuccess;
+    background-color: @colorSuccess;
   }
   .current {
-    color: @colorSuccess;
+    color: #fff;
     border: 1px solid @colorSuccess;
+    background-color: @colorSuccess;
   }
   .current.prev,
   .current.next {
-    color: #989898;
-    border: 1px solid #707070;
+    color: @colorGrey;
+    border: 1px solid @colorGreyLight;
+    background-color: #fff;
   }
 }

@@ -1,19 +1,23 @@
+include ./score-start.jade
+
 mixin listItemRanking(data, config)
     .list-item-wrap-ranking
         .ranking-order(class="#{config.rank > 3 ? 'ranking-normal' : 'ranking-red'}")
             span.ranking-order-number #{config.rank}
         .mw-row
             .mw-col-23
-                a.list-cover-wrap(href="#")
+                a.list-cover-wrap(href="/movie/detail/#{data._id}")
                     .img-cover-wrap
-                        img.img-cover(src="#{data && data.poster ? data.poster : 'https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507022339.jpg'}", onerror="imgError(this)", ondragstart="return false;")
+                        img.img-cover(src="#{data.images.large}", onerror="imgError(this)", ondragstart="return false;")
             .mw-col-37
                 .list-info-wrap
-                    a(href="#").info-name.text-ellipsis 肖申克的救赎
-                    p.info-misc.text-ellipsis 年代：1957
-                    p.info-misc.text-ellipsis 地区：美国
-                    p.info-type.text-ellipsis 类型：剧情 / 犯罪 / 悬疑
-                    p.info-actor 主演： 蒂姆·罗宾斯 / 摩根·弗里曼 / 鲍勃·冈顿 / 威廉姆·赛德勒 / 克兰西·布朗 / 吉尔·贝罗斯 / 马克·罗斯顿 / 詹姆斯·惠特摩 / 杰弗里·德曼 / 拉里·布兰登伯格 / 尼尔·吉恩托利 / 布赖恩·利比 / 大卫·普罗瓦尔 / 约瑟夫·劳格诺 / 祖德·塞克利拉
+                    a(href="/movie/detail/#{data._id}").info-name.text-ellipsis #{data.title}
+                    p.info-misc 原名：#{data.original_title}
+                    p.info-misc 年代：#{data.year}
+                    p.info-misc 地区：美国
+                    p.info-type 类型：#{data.genres.join(' / ')}
+                    p.info-actor 导演： #{data.directors.map(function(item) {return item.name}).join(' / ')}
+                    p.info-actor 主演： #{data.casts.map(function(item) {return item.name}).join(' / ')}
                     .info-score
-                        +scoreStart(8.5, {showText: true})
-                        span.info-score-amount (33189人评价)
+                        +scoreStart(data.rating.average, {showText: true})
+                        span.info-score-amount (#{data.collect_count}人评价)

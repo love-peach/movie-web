@@ -1,6 +1,6 @@
 mixin scoreStart(score, config)
     - elWidth = config.showText ? 7 : 5
-    .score-start-wrap(sty;e="width: #{elWidth}em")
+    .score-start-wrap(style="width: #{elWidth}em")
         - percent = (Math.round(score / 10 * 10000) / 100.00 + "%")
         .star-wrap
             .start-active(style="width: #{percent}")

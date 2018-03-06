@@ -1,3 +1,5 @@
+@import "../../../src/stylesheets/mixins/variable.less";
+
 .page-detail {
 	.video-infomation {
 		padding-top: 30px;
@@ -10,6 +12,7 @@
 	.panel-left {
 		background-color: #fff;
 		margin-bottom: 30px;
+		width: 100%;
 		.video-player-wrap {
 			.video-player-box {
 				width: 100%;
@@ -21,18 +24,19 @@
 			}
 			.video-player-control {
 				height: 60px;
-				background-color: #4cb6cb;
+				background-color: @colorInfo;
 	    		color: #eaf6f9;
 			}
 		}
 		.video-brief {
 			padding: 20px;
 			.brief-title {
-				color: #333;
+				color: @colorDark;
 				font-size: 30px;
+				font-weight: 400;
 			}
 			.brief-introduce {
-				color: #788188;
+				color: @colorGreyHeavy;
 				text-align: justify;
 			}
 		}
@@ -42,7 +46,7 @@
 		background-color: #fff;
 		margin-bottom: 30px;
 		// padding: 20px 10px 10px;
-		color: #788188;
+		color: @colorGreyHeavy;
 		.video-rate {
 			background: no-repeat url(/images/captain.jpeg) center center;
 			background-size: cover;
@@ -95,12 +99,12 @@
 			    resize: none;
 			    color: #999;
 				font-size: 14px;
-				border: 1px solid #cbd5dd;
-		        border-bottom: 1px solid #cbd5dd;
+				border: 1px solid @colorGreyLight;
+		        border-bottom: 1px solid @colorGreyLight;
 			}
 			textarea:focus {
 				color: #333;
-				border: 1px solid #4cb6cb;
+				border: 1px solid @colorSuccess;
 			}
 			.form-submit-wrap {
 				background-color: #fff;
@@ -122,15 +126,15 @@
 					padding-left: 60px;
 				}
 				.coment-name {
-					color: #333;
+					color: @colorDark;
 				}
 				.comment-content {
-					color: #788188;
+					color: @colorGreyHeavy;
 					margin: 0;
 				}
 			}
 			.list-item + .list-item {
-				border-top: 1px solid #e5e5e5;
+				border-top: 1px solid @colorGreyLight;
 			}
 		}
 	}

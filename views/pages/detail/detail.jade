@@ -5,9 +5,9 @@ block afterHeadContent
 
 block content
 	.page-detail
-		.container
-			.row.video-infomation
-				.col-md-8
+		.mw-container
+			.mw-row.video-infomation
+				.mw-col-44
 					.panel-left
 						.video-player-wrap
 							.video-player-box
@@ -17,11 +17,11 @@ block content
 
 						.video-brief
 							h2.brief-title #{movie.name}
-							p.brief-introduce #{movie.brief} 
+							p.brief-introduce #{movie.brief}
 
-				.col-md-4(style="flex: 1")
+				.mw-col-16(style="flex: 1")
 					.panel-right
-						.video-rate.hidden-sm.hidden-xs
+						.video-rate
 							h1 #{movie.rate}
 						dl
 							dt.visible-sm.visible-xs 评分
@@ -42,20 +42,18 @@ block content
 								dd #{movie.alias}
 							dt 上映日期
 								dd #{movie.releaseTime}
-			.row
-				.col-xs-12
-					.comment-wrap
-						.comment-form
-							.input-textarea
-								textarea(type="textarea", rows="4", cols="20", placeholder="我来说两句")
-							.form-submit-wrap.text-right
-								button.btn.btn-primary 发表评论
-						ul.comment-list
-							each item in [1,2,3,4,5,6]
-								li.list-item
-									img.comment-avatar(src="/images/captain.jpeg")
-									.content-wrap
-										p.coment-name 莫忘初衷
-										p.comment-content 回看这个系列，真的从始至终都表达了自己要说的东西，作为暑期大片实为难得。这部终章直指美国是建立在奴隶制的基础上——猿族劳役时竟大放星条旗永不落，真是太讽刺。反派就像纳粹种族清洗者和现代启示录的白兰度的结合，纳粹思维的荒谬和疯狂令人瞠目。瑟金斯真
 
-						
+			.comment-wrap
+				.comment-form
+					.input-textarea
+						textarea(type="textarea", rows="4", cols="20", placeholder="我来说两句")
+					.form-submit-wrap.text-right
+						button.btn.btn-primary 发表评论
+				ul.comment-list
+					each item in [1,2,3,4,5,6]
+						li.list-item
+							img.comment-avatar(src="/images/captain.jpeg")
+							.content-wrap
+								p.coment-name 莫忘初衷
+								p.comment-content 回看这个系列，真的从始至终都表达了自己要说的东西，作为暑期大片实为难得。这部终章直指美国是建立在奴隶制的基础上——猿族劳役时竟大放星条旗永不落，真是太讽刺。反派就像纳粹种族清洗者和现代启示录的白兰度的结合，纳粹思维的荒谬和疯狂令人瞠目。瑟金斯真
+

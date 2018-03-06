@@ -1,8 +1,14 @@
 mixin filterBar(data)
     ul.filter-bar-wrap.clearfix
-        each filter in data
+        - iconMap = ['icon-biaoqian', 'icon-location', 'icon-sort']
+        each filter, index in data
             li
-                a.current #{filter.current}
+
+                a.current
+                    i.iconfont(class="#{iconMap[index]}")
+                    | #{filter.current}
+                    i.iconfont.icon-sanjiao
+
                 ul
                     each children in filter.child
                         li
