@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "movie-web",
+      "script": "./bin/www",
+      "instances": 0,
+      "watch": false,
+      "exec_mode": "cluster_mode"
+    }
+  ]
+}

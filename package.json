@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp",
-    "build": "gulp build"
+    "dev": "NODE_ENV=dev gulp",
+    "build": "cross-env NODE_ENV=production gulp build",
+    "start": "pm2 start ./bin/processes.json"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "browser-sync": "^2.18.13",
     "connect-mongo": "^2.0.0",
     "cookie-parser": "^1.4.3",
+    "cross-env": "^5.1.3",
     "del": "^3.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",

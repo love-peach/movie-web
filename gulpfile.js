@@ -184,5 +184,4 @@
     gulp.task('build', ['clean'], function () {
         return gulp.start('img', 'css', 'js', 'copyPlugs');
     });
-
 })();
