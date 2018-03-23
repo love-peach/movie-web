@@ -43,7 +43,7 @@ exports.getSearch = function (params) {
 /** 电影条目信息
  * */
 exports.getMovieDetail = function (params) {
-    return request.get('/v2/movie/subject/id', params);
+    return request.get('/v2/movie/subject/' + params.id , params);
 };
 
 /** 电影条目剧照

@@ -1,0 +1,26 @@
+mixin listItemSearch(data, config)
+    .list-item-wrap-review
+        .mw-row
+            .mw-col-10
+                a.list-cover-wrap(href="/movie/detail/#{data.id}")
+                    .img-cover-wrap
+                        img.img-cover(src="#{data.images.large}", onerror="imgError(this)", ondragstart="return false;")
+            .mw-col-50
+                .list-info-wrap
+                    .review-head
+                        h2.review-head-title
+                            a(href="/movie/detail/#{data.id}") #{data.title}
+                        .review-head-info
+                            span.info-author 原名：#{data.original_title}
+                        time.head-time
+                    .info-rate
+                        +scoreStart(data.rating.average, {showText: true})
+                    p.info-misc 年代：#{data.year}
+                    p.info-type 类型：#{data.genres.join(' / ')}
+                    p.info-actor 导演： #{data.directors.map(function(item) {return item.name}).join(' / ')}
+                    p.info-actor 主演： #{data.casts.map(function(item) {return item.name}).join(' / ')}
+
+
+
+
+

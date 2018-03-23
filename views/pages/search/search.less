@@ -1,0 +1,144 @@
+@import "../../../src/stylesheets/mixins/variable.less";
+
+@import "../../../src/stylesheets/components/list-item-search.less";
+
+
+.page-search {
+  .section-top-part {
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 1px 3px 10px rgba(0,0,0,.1);
+    .part-banner {
+      border-bottom: 1px solid @colorGreyLight;
+      .banner-content {
+        height: 120px;
+        border-radius: 4px;
+        margin: 20px 0;
+        background: #83c44e;
+      }
+    }
+    .part-title {
+      .title-content {
+        height: 60px;
+        line-height: 60px;
+        font-weight: 200;
+        font-size: 22px;
+      }
+    }
+  }
+  .search-result-list {
+    .result-list-item {
+      //margin-bottom: 10px;
+      border-bottom: 1px solid @colorGreyLight;
+    }
+  }
+  .side-panel-fixed {
+    position: fixed;
+    top: 20px;
+    width: 286.5px;
+    animation-name: bounceInDown;
+  }
+  .side-panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    .panel-title {
+      position: relative;
+      margin: 0 20px;
+      padding: 15px 0 10px;
+      font-weight: 400;
+      line-height: 1;
+      border-bottom: 1px solid @colorGreyLight;
+      &:after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        margin-top: -8px;
+        content: "";
+        border-radius: 50%;
+        background-color: @colorSilver;
+        box-shadow: inset -1px 0 3px rgba(0,0,0,.5);
+      }
+    }
+    .panel-sub-title {
+      padding: 5px 0;
+      margin: 0 20px;
+      text-align: right;
+      border-bottom: 1px dashed @colorGreyLight;
+    }
+  }
+  .search-by-category {
+    padding: 10px;
+    li {
+      display: inline-block;
+      width: 25%;
+      a {
+        display: block;
+        padding: 8px 0;
+        margin: 3px;
+        color: @textMiddle;
+        line-height: 1;
+        text-align: center;
+        border-radius: @radiusSize;
+        &:hover {
+          color: #fff;
+          background-color: @colorSuccess;
+        }
+      }
+    }
+  }
+  .search-hot-wrap {
+    height: 400px;
+  }
+  .ranking-list-wrap {
+    margin: 5px 20px;
+    li {
+      position: relative;
+      border-bottom: 1px dashed @colorGreyLight;
+    }
+    li:last-child {
+      border: 0;
+    }
+
+    .rank-num {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      display: inline-block;
+      margin-right: 5px;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: #fff;
+      border-radius: 100%;
+      background-color: @colorGrey;
+    }
+    .rank-prev {
+      background-color: @colorDanger;
+    }
+    a {
+      display: block;
+      padding: 8px 20px 8px 25px;
+    }
+    .rank-delta {
+      position: absolute;
+      top: 11px;
+      right: 0;
+      line-height: 1;
+    }
+    .icon-shangsheng {
+      color: @colorSuccess;
+    }
+    .icon-xiajiang {
+      color: @colorWarning;
+    }
+    .rank-static {
+      display: inline-block;
+      width: 16px;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+}

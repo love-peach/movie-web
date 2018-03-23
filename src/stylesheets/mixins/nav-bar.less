@@ -1,8 +1,15 @@
+@import "./variable.less";
+
 .nav-bar {
-	background-color: #090723;
-	border-radius: 0;
-	color: #60606d;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	width: 100%;
+	background-color: hsla(0,0%,100%,.95);
+	color: @colorGreyHeavy;
 	height: @navbarHeight;
+	//border-bottom: 1px solid @colorGreyLight;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,.09);
 	.brand {
 		float: left;
 		height: @navbarHeight;
@@ -11,7 +18,7 @@
 		margin-right: 50px;
 		.logo {
 			font-size: 22px;
-			color: #fff;
+			color: @colorInfo;
 		}
 	}
 	.nav-menus {
@@ -19,18 +26,28 @@
 		.menu {
 			float: left;
 			.menu-link {
+				position: relative;
 				display: block;
 				padding: 0 15px;
 				height: @navbarHeight;
 				line-height: @navbarHeight;
 				font-size: 14px;
 				text-decoration: none;
+				&:hover:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background-color: @colorInfo;
+				}
 			}
 			.menu-link.active {
 				color: #fff;
 			}
 			.menu-link:hover {
-				color: #fff;
+				color: @colorDark;
 			}
 		}
 	}
@@ -40,34 +57,106 @@
 		margin-right: 26px;
 		.search-input {
 			margin: (@navbarHeight - 30)/2px 0;
-			width: 200px;
-		    height: 30px;
-		    font-size: 12px;
-		    color: #aaa;
+			width: 340px;
+			height: 30px;
+			padding: 0 30px 0 13px;
+			font-size: 12px;
+		    color: @colorGreyHeavy;
 		    border-radius: 15px;
-		    padding: 0 35px 0 17px;
-		    border: 1px solid rgba(255,255,255,.5);
-		    background: 0 0;
+		    border: 1px solid @colorInfo;
 		    outline: none;
-			transition: all .3s ease;
+			background-color: transparent;
+			transition: width .3s ease;
+			&:hover {
+				color: @colorDark;
+			}
+			&:focus {
+				color: @colorDark;
+			}
 		}
-		.search-input:focus {
-			color: #dfdfdf;
-			border: 1px solid rgba(255,255,255,.8);
-		}
+
 		.icon-search {
 			position: absolute;
-		    right: 1px;
+		    right: 0;
 		    top: (@navbarHeight - 30)/2px;
 			height: 30px;
-			width: 30px;
+			width: 60px;
 			text-align: center;
 		    line-height: 30px;
-		    font-size: 18px;
+		    font-size: 15px;
 		    cursor: pointer;
-		    color: rgba(255,255,255,.5);
+		    color: #fff;
+			font-weight: bold;
+
+			background: @colorInfo;
+			border-top-right-radius: 30px;
+			border-bottom-right-radius: 30px;
+		}
+		.icon-search:after {
+			position: relative;
+			top: -1px;
+			content: '搜索';
+			font-size: 13px;
+			margin-left: 5px;
 		}
 	}
+
+	.search-suggest-wrap {
+		position: absolute;
+		z-index: 999;
+		top: 43px;
+		left: 13px;
+		right: 60px;
+		background-color: #fff;
+		box-shadow: 0 3px 15px rgba(0,0,0,.2);
+		.concave-radius {
+			height: 15px;
+			width: 15px;
+			position: absolute;
+			top: 0;
+		}
+		.position-right {
+			right: 0;
+		}
+		.position-left {
+			left: 0;
+		}
+		.suggest-item {
+			border: 1px solid @colorGreyLight;
+			border-top: 0;
+			&.active {
+				background-color: @colorGreyLight;
+			}
+			&:hover {
+				background-color: @colorSilver;
+			}
+		}
+		.suggest-item-link {
+			display: block;
+			padding: 6px;
+			overflow: hidden;
+			zoom: 1;
+			.link-img {
+				width: 40px;
+				height: 58px;
+				margin-right: 5px;
+				float: left;
+			}
+			.link-info {
+				color: @colorGrey;
+			}
+			.info-name {
+				margin-right: 5px;
+				color: @colorDark;
+				font-style: normal;
+			}
+			.info-sub-name {
+				display: block;
+				margin-top: 3px;
+			}
+		}
+	}
+
 
 	.account {
 		float: right;

@@ -5,16 +5,17 @@ block afterHeadContent
 
 block content
 	.page-home
-		.section-part
+		.section-part-top
 			.mw-container
 				+banner(bannerData)
 				.mw-row
 					each item in [1,2,3,4]
 						.mw-col-15
 							.some-content someText
-		.mw-container
-			each model in modelsData
-				+listLayout(model, {lazyImg: false})
+		.section-part-content
+			.mw-container
+				each model in modelsData
+					+listLayout(model, {lazyImg: false})
 
 
 

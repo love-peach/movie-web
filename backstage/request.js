@@ -2,6 +2,8 @@ var axios = require('axios');
 var instance = axios.create();
 var qs = require('qs');
 
+var apikey = '0b2bdeda43b5688921839c8ecb20399b';
+
 // 全局设置项
 instance.defaults.baseURL = 'http://api.douban.com/';
 instance.defaults.timeout = 20000;
@@ -11,19 +13,19 @@ instance.defaults.headers.get['Cache-Control'] = 'no-cache';
 instance.defaults.headers.get['Pragma'] = 'no-cache';
 instance.defaults.headers.common['Accept'] = 'application/json, text/plain, */*';
 
-instance.defaults.transformRequest = [
-    function (data) {
-        data.apikey = '0b2bdeda43b5688921839c8ecb20399b';
-        data = qs.stringify(data);
-        return data;
-    }
-];
+// instance.defaults.transformRequest = [
+//     function (data) {
+//         data = qs.stringify(data);
+//         console.log(data,'data');
+//         return data;
+//     }
+// ];
 
 
 // 请求前 钩子
 instance.interceptors.request.use(config => {
+    console.time('请求花费时间');
     console.log('请求之前该做的事', config.url);
-    console.time('请求花费时间')
     return config;
 }, error => {
     // Do something with request error
@@ -32,8 +34,7 @@ instance.interceptors.request.use(config => {
 
 // 请求完成 钩子
 instance.interceptors.response.use(response => {
-    console.log('请求完成该做的事' );
-    console.timeEnd('请求花费时间')
+    console.timeEnd('请求花费时间');
     return response;
     // return Promise.reject({msg: '未知错误'});
 }, err => {
@@ -84,6 +85,7 @@ instance.interceptors.response.use(response => {
 
 
 function fetch(url, data, method = 'get', options) {
+    data.apikey = apikey;
     const isGet = method === 'get';
     if (isGet) {
         url = mosaicUrl(url, data);
@@ -147,5 +149,5 @@ module.exports = {
     },
     del(url, params, options) {
         return fetch(url, params, 'delete', options);
-    },
-}
+    }
+};

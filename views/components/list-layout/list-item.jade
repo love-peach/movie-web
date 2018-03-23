@@ -1,10 +1,10 @@
 mixin listItem(data, config)
     .list-item-wrap
-        a.list-cover-wrap(href="/movie/detail/#{data._id}")
+        a.list-cover-wrap(href="/movie/detail/#{data.id}")
             .img-cover-wrap(style="height: #{config.imgHeight ? config.imgHeight + 'px' : 'auto'}")
                 img.img-cover(src="#{data.images.large}", onerror="imgError(this)", ondragstart="return false;")
         .list-info-wrap
-            a(href="/movie/detail/#{data._id}").info-name.text-ellipsis #{data.title}
+            a(href="/movie/detail/#{data.id}").info-name.text-ellipsis #{data.title}
             p.info-director #{data.genres.join(' / ')}
             span.info-score #{data.rating.average}
 

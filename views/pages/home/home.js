@@ -21,5 +21,5 @@ $(document).ready(function () {
         sliderData.animate(dataIndex);
     });
 
-
+    $('.banner-wrap').removeClass('img-loading');
 });

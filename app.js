@@ -1,3 +1,4 @@
+var config = require('./config');
 var express = require("express");
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -5,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
+var proxyMiddleware = require('http-proxy-middleware');
 const MongoStore = require('connect-mongo')(session);
 
 const dbUrl = 'mongodb://127.0.0.1:27017/movie_web';
@@ -39,7 +41,19 @@ app.use(session({
 }));
 
 // 设置 静态资源目录
-app.use(express.static(path.join(__dirname, 'dist')))
+app.use(express.static(path.join(__dirname, 'dist')));
+
+
+// 反向代理客户端请求
+// todo 注意 这个代理只需要在开发的时候用，线上可以通过 nginx 代理。
+var proxyTable = config.proxyTable;
+Object.keys(proxyTable).forEach(function (context) {
+    var options = proxyTable[context];
+    if (typeof options === 'string') {
+        options = {target: options}
+    }
+    app.use(proxyMiddleware(options.filter || context, options))
+});
 
 // 引入路由
 require('./routes/routes')(app)

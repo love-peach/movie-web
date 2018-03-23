@@ -13,8 +13,14 @@
 
 
 
+
+
 .page-home {
-	.section-part {
+	.section-part-top {
+		position: fixed;
+		top: @navbarHeight;
+		left: 0;
+		width: 100%;
 		background-color: #fff;
 		padding: 20px 0;
 		.some-content {
@@ -23,5 +29,12 @@
 			background: @colorSuccess;
 			border-radius: @radiusSize;
 		}
+	}
+	.section-part-content {
+		position: relative;
+		z-index: 10;
+		margin-top: 560px;
+		background: @colorSilver;
+
 	}
 }

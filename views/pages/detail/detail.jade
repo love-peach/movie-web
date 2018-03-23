@@ -11,49 +11,78 @@ block content
 					.panel-left
 						.video-player-wrap
 							.video-player-box
-								video.video-player(id="vedioPlayer",controls, autoplay, type="video/webm", preload="metadata", src="http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.webm") Your browser does not support the video tag.
-							.video-player-control
-								.iconfont.icon-
+								- var videoUrl = movie.trailer_urls.length ? movie.trailer_urls[0] : 'http://flatfull.com/themes/assets/video/big_buck_bunny_trailer.webm'
+								- var  videoPoster = movie.trailers.length ? movie.trailers[0].medium : ''
+								video.video-player(id="videoPlayer", poster="#{videoPoster}", type="video/webm", preload="metadata", src="#{videoUrl}") Your browser does not support the video tag.
+								.video-mask
+									i.iconfont.icon-play-circle
+							.video-player-control.position-absolute
+								.control-wrap
+									.control-play
+										i.iconfont.icon-play
+										i.iconfont.icon-pause
+									.control-progress
+										.progress-bar
+											.progress-item
+											.progress-text
+									.control-current-time 00:00
+									.control-duration 00:00
+									.control-sound
+										i.iconfont.icon-sound
+										i.iconfont.icon-mute
+									.control-volume
+										.progress-bar
+											.progress-item
+									.control-screen
+										i.iconfont.icon-full-screen
+										i.iconfont.icon-exit-full-screen
 
 						.video-brief
-							h2.brief-title #{movie.name}
-							p.brief-introduce #{movie.brief}
+							h2.brief-title #{movie.title} #{movie.original_title}
+								span.brief-year (#{movie.year})
+							p.brief-introduce #{movie.summary}
+						.comment-wrap
+							ul.comment-list
+								each review in movie.popular_reviews
+									li.list-item
+										img.comment-avatar(src="#{review.author.avatar}")
+										.content-wrap
+											p.coment-name #{review.title}
+											.comment-content
+												span.content-short #{review.summary}
+												.content-full
+												a.more-summary(herf="javascript:;",data-id="#{review.id}") (展开)
+							.comment-form
+								.input-textarea
+									textarea(type="textarea", rows="4", cols="20", placeholder="我来说两句")
+								.form-submit-wrap.text-right
+									button.btn.btn-primary 发表评论
 
-				.mw-col-16(style="flex: 1")
+				.mw-col-16
 					.panel-right
-						.video-rate
-							h1 #{movie.rate}
+						.video-posters
+							img.img-cover(src="#{movie.images.large}", onerror="imgError(this)", ondragstart="return false;")
 						dl
-							dt.visible-sm.visible-xs 评分
-								dd.visible-sm.visible-xs #{movie.rate}
+							dt 评分
+								dd.info-score
+									+scoreStart(movie.rating.average, {showText: true})
 							dt 导演
-								dd #{movie.director}
-							dt 编剧
-								dd #{movie.screenwriter}
+								dd #{movie.directors.map(function(item) {return item.name}).join(' / ')}
+							dt 主演
+								dd #{movie.casts.map(function(item) {return item.name}).join(' / ')}
 							dt 类型
-								dd #{movie.type}
+								dd #{movie.genres.join(' / ')}
 							dt 地区
-								dd #{movie.region}
+								dd #{movie.countries.join(' / ')}
 							dt 语言
-								dd #{movie.language}
+								dd #{movie.languages.join(' / ')}
 							dt 片长
-								dd #{movie.filmLength}
-							dt 又名
-								dd #{movie.alias}
+								dd #{movie.durations.join(' / ')}
 							dt 上映日期
-								dd #{movie.releaseTime}
+								dd #{movie.pubdate || '暂无数据'}
 
-			.comment-wrap
-				.comment-form
-					.input-textarea
-						textarea(type="textarea", rows="4", cols="20", placeholder="我来说两句")
-					.form-submit-wrap.text-right
-						button.btn.btn-primary 发表评论
-				ul.comment-list
-					each item in [1,2,3,4,5,6]
-						li.list-item
-							img.comment-avatar(src="/images/captain.jpeg")
-							.content-wrap
-								p.coment-name 莫忘初衷
-								p.comment-content 回看这个系列，真的从始至终都表达了自己要说的东西，作为暑期大片实为难得。这部终章直指美国是建立在奴隶制的基础上——猿族劳役时竟大放星条旗永不落，真是太讽刺。反派就像纳粹种族清洗者和现代启示录的白兰度的结合，纳粹思维的荒谬和疯狂令人瞠目。瑟金斯真
 
+
+
+block afterContent
+	script(src="/javascripts/detail/detail.min.js")

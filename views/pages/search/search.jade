@@ -1,0 +1,59 @@
+extends ../../layout/index
+
+block afterHeadContent
+    link(rel="stylesheet", href="/stylesheets/search/search.min.css")
+
+block content
+    .page-search
+        .section-top-part
+            .part-banner
+                .mw-container
+                    .banner-content fefe
+            .part-title
+                .mw-container
+                    h2.title-content #{movies.title}
+        .mw-container
+            .mw-row
+                .mw-col-45
+                    ul.search-result-list
+                        each movie in movies.subjects
+                            li.result-list-item
+                                +listItemSearch(movie, {imgHeight: 258})
+                .mw-col-15
+                    .side-panel(id="js-category-search")
+                        h3.panel-title 分类搜索
+                        ul.search-by-category
+                            - categories = ['全部', '剧情', '爱情', '喜剧', '科幻', '动作', '悬疑', '犯罪', '恐怖', '青春', '励志', '战争', '文艺', '情色', '暴力', '音乐', '家庭', '黑色幽默']
+                            each category in categories
+                                li
+                                    a(href="/search?tag=#{category}") #{category}
+                    .side-panel
+                        h3.panel-title 北美票房榜
+                        p.panel-sub-title #{moviesUs.date}/美元
+                        ol.ranking-list-wrap
+                            each movie in moviesUs.subjects
+                                li
+                                    span.rank-num(class="#{movie.rank < 4 ? 'rank-prev' : ''}") #{movie.rank}
+                                    a(href='/') #{movie.subject.title}
+                                    span.rank-delta #{parseInt(movie.box / 10000)}万
+
+
+                    .side-panel
+                        h3.panel-title 本周口碑榜
+                        ol.ranking-list-wrap
+                            each movie in moviesWeekly
+                                li
+                                    span.rank-num(class="#{movie.rank < 4 ? 'rank-prev' : ''}") #{movie.rank}
+                                    a(href='/') #{movie.subject.title}
+                                    span.rank-delta
+                                        if movie.delta > 0
+                                            i.iconfont.icon-shangsheng
+                                        else if movie.delta < 0
+                                            i.iconfont.icon-xiajiang
+                                        else
+                                            span.rank-static —
+
+
+
+block afterContent
+    script(src="/javascripts/search/search.min.js")

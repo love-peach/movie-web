@@ -14,19 +14,34 @@ exports.list = function(req, res) {
     });
 }
 
-exports.detail = function(req, res) {
+// exports.detail = function(req, res) {
+//     var id = req.params.id;
+//     Movie.findById(id, function(err, movie) {
+//         if (err) {
+//             console.log(err, '详情页报错');
+//         } else {
+//             res.render('detail/detail', {
+//                 title: '详情',
+//                 movie: movie
+//             })
+//         }
+//     })
+// }
+
+var api = require('../api');
+exports.detail = function(req, res, next) {
     var id = req.params.id;
-    Movie.findById(id, function(err, movie) {
-        if (err) {
-            console.log(err, '详情页报错');
-        } else {
+    api.getMovieDetail({id})
+        .then(function (response) {
             res.render('detail/detail', {
                 title: '详情',
-                movie: movie
+                movie: response
             })
-        }
-    })
-}
+        })
+        .catch(function (err) {
+            next(err)
+        })
+};
 
 // movie entry page
 exports.entry = function(req, res) {

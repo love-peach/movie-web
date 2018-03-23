@@ -5,6 +5,9 @@
   position: relative;
   margin-bottom: 20px;
   height: 325px;
+  border-radius: @radiusSize;
+  overflow: hidden;
+  background-color: @colorDark;
   .banner {
     li {
       //height: 450px; // 如果 a 标签没有高度需要启用这个。
@@ -13,7 +16,7 @@
         height: 325px; /* 注意 改动这个，unslider-fade 样式也需要改*/
         background-position: center;
         background-size: cover;
-        border-radius: @radiusSize;
+        //border-radius: @radiusSize;
       }
     }
   }
@@ -30,14 +33,15 @@
     background-size: 50%;
   }
   .unslider-arrow.prev {
-    //background-image: url(/images/arrow-prev.png);
+    background-image: url(/images/arrow-prev.png);
   }
   .unslider-arrow.next {
-    //background-image: url(/images/arrow-next.png);
+    background-image: url(/images/arrow-next.png);
   }
   &:hover {
     .unslider-arrow {
       display: block;
+      z-index: 999;
     }
   }
 

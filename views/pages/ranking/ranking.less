@@ -8,37 +8,6 @@
 
 
 .page-ranking {
-	/* 内凹圆角样式 */
-	.concave-radius {
-		position: relative;
-		height: 100px;
-		width: 100px;
-		overflow: hidden;
-		&:before {
-			content: '';
-			width: 200%;
-			height: 200%;
-			position: absolute;
-			background: radial-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0) 69%, rgba(0,0,0,.1), 70.6%, #fff 70.7%, #fff 100%); /* 标准的语法 */
-		}
-		&.top-left:before {
-			top: 0;
-			left: 0;
-		}
-		&.top-right:before {
-			top: 0;
-			right: 0;
-		}
-		&.bottom-left:before {
-			bottom: 0;
-			left: 0;
-		}
-		&.bottom-right:before {
-			top: 0;
-			right: 0;
-		}
-	}
-
 	/* banner 条样式 以及分类样式*/
 	.section-top-part {
 		background-color: #fff;
